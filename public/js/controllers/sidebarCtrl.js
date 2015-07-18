@@ -1,6 +1,6 @@
 module.exports = function($scope) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        console.log("home loaded");
+        console.log("main content loaded");
     })
 }

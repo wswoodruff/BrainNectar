@@ -47215,10 +47215,7 @@
 /***/ function(module, exports) {
 
 	module.exports = function($scope, $state) {
-	    console.log("masterCtrl here");
-	    setTimeout(function() {
-	        $state.go('home');
-	    }, 1)
+	    $state.go('home');
 	}
 
 
@@ -47273,7 +47270,7 @@
 	module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap'])
 	
 	.run(function() {
-	    alert("app is running");
+	    
 	})
 	
 	.config(function($stateProvider, $urlRouterProvider) {
