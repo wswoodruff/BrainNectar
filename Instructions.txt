@@ -1,3 +1,29 @@
+/*
+ * Instructions to run project locally
+ */
+
+1. Clone the Brain Nectar repo locally
+2. Open Terminal, navigate to the root directory of the project and type:
+
+        "npm start"
+
+/*
+ * Instructions to run the dev environment via webpack
+ */
+
+1. Open Terminal, navigate to the root directory of the project and type:
+        
+        "npm run dev"
+
+This runs webpack and opens webpack's hot dev server, which watches modules and refreshes the browser when a module changes. This includes my Sass file found in: "/public/css/_index.scss", and will include future Sass files I create.
+
+This is nice since webpack only rebuilds and injects the module that changed, rather than rebuilding the whole project.
+
+
+/*
+ * Challenge Instructions for me
+ */
+
 Hi Bill,
 
 It was great speaking with you! As mentioned, here is our front-end developer challenge.
