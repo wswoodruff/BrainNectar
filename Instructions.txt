@@ -1,0 +1,35 @@
+Hi Bill,
+
+It was great speaking with you! As mentioned, here is our front-end developer challenge.
+
+The Challenge:
+
+You have invented the greatest beverage known to mankind and only you have the secret recipe to produce it. 
+The entire world wants your beverage and are willing to embrace your bold (Tesla-inspired) direct to consumer sales & marketing approach. 
+Design & build a lightweight website where your global audience can purchase your wunder-beverage and have it shipped directly to their location. 
+Show the popularity of your beverage by showing a mock-up feed of sales made (twitter feed style with first name, quantity, city, country) 
+and simple mock-up stats showing # of units sold & # of units shipped. This challenge is intended to show your front-end skills, all features you design
+and build should be front-end only and can be mocked/stubbed. For example, we would like to see how you design and implement a purchase form, but do not 
+expect it to hit any external service or backend. 
+
+Please include:
+1 ) Instructions to setup and run your wunder-beverage website locally 
+2 ) Use Bootstrap for any front-end visuals (if you need icons, use the glypicons in Bootstrap).
+3 ) For CSS: Use SCSS for styling 
+4 ) If you have experience with Ruby on Rails, we would love to see you show it off by doing the challenge in a rails environment.
+
+Important Notes:
+1 ) Please create a private github repo immediately and invite: adeviadoug to the repo. We like to watch the commit stream to see your thinking process. Please commit early & often (within reason) so I can see the evolution of your application. (Email our CTO, Doug Schlenker, the link to your repo so we ensure we associate your application to your repo, doug@varsitytutors.com)
+2 ) Have fun! If you would like to add additional aspects to your wunder-beverage site feel free to do so.
+3 ) You don't have to call it the wunder-beverage, you can give it your own flair (I actually encourage it)
+4 ) Shoot Doug an email (doug@varsitytutors.com) once you're done with the URL to the github submission (this makes it easier to find).
+5 ) If you have any questions, feel free to ask. All questions and any comments that you have post submission (which are helpful in our code review) will be passed along during the code review.
+
+Please have a finished version of the tech challenge done no later than next Friday at 5pm EST. We're excited to continue the process with you!
+
+
+Thanks,
+
+Jeramy Keetch
+National Director of Recruitment
+Varsity Tutors
