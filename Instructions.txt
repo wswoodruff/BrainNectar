@@ -7,9 +7,11 @@
 
         "npm start"
 
+
 /*
  * Instructions to run the dev environment via webpack
  */
+
 
 1. Open Terminal, navigate to the root directory of the project and type:
         
@@ -18,6 +20,15 @@
 This runs webpack and opens webpack's hot dev server, which watches modules and refreshes the browser when a module changes. This includes my Sass file found in: "/public/css/_index.scss", and will include future Sass files I create.
 
 This is nice since webpack only rebuilds and injects the module that changed, rather than rebuilding the whole project.
+
+
+/*
+ * Modules location
+ */
+
+The modules I work in are in /public/js/
+
+
 
 
 /*
@@ -32,10 +43,14 @@ The Challenge:
 
 You have invented the greatest beverage known to mankind and only you have the secret recipe to produce it. 
 The entire world wants your beverage and are willing to embrace your bold (Tesla-inspired) direct to consumer sales & marketing approach. 
-Design & build a lightweight website where your global audience can purchase your wunder-beverage and have it shipped directly to their location. 
-Show the popularity of your beverage by showing a mock-up feed of sales made (twitter feed style with first name, quantity, city, country) 
+Design & build a lightweight website where your global audience can purchase your wunder-beverage and have it shipped directly to their location.
+
+
+-- Show the popularity of your beverage by showing a mock-up feed of sales made (twitter feed style with first name, quantity, city, country) 
 and simple mock-up stats showing # of units sold & # of units shipped. This challenge is intended to show your front-end skills, all features you design
-and build should be front-end only and can be mocked/stubbed. For example, we would like to see how you design and implement a purchase form, but do not 
+and build should be front-end only and can be mocked/stubbed. 
+
+-- For example, we would like to see how you design and implement a purchase form, but do not 
 expect it to hit any external service or backend. 
 
 Please include:

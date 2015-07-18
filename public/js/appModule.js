@@ -1,13 +1,13 @@
-module.exports = angular.module('brainNectar', ['app.controllers', 'app.services'])
+module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap'])
 
 .run(function() {
-    alert("app is running");
+    
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('master', {
-      url: "/",
+      url: "",
       templateUrl: 'partials/master.html',
       controller: 'MasterCtrl'
     })
