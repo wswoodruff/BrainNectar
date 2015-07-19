@@ -3,4 +3,6 @@ module.exports = function($scope) {
         event.stopPropagation();
         console.log("header loaded");
     })
+
+    $scope.navCollapsed = true;
 }

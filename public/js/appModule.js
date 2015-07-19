@@ -1,4 +1,4 @@
-module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap'])
+module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'mgcrea.ngStrap'])
 
 .run(function() {
     
@@ -31,19 +31,19 @@ $stateProvider
             }
         }
     })
-    
+
     .state('main.home', {
         url: '/home',
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
     })
-    
+
     .state('main.shop', {
         url:'/shop',
         templateUrl: 'partials/shop.html',
         controller: 'ShopCtrl'
     })
-    
+
     .state('main.cart', {
         url:'/cart',
         templateUrl: 'partials/cart.html',
@@ -54,22 +54,5 @@ $stateProvider
     $urlRouterProvider.otherwise('/');
 });
 
-/*
 
-.state('main.content', {
-    templateUrl: 'partials/mainContent.html',
-    controller: 'MainContentCtrl'
-})
 
-.state('main.sidebar', {
-    templateUrl: 'partials/sidebar.html',
-    controller: 'SidebarCtrl'
-})
-
-.state('main.content.home', {
-    url: '/home',
-    templateUrl: 'partials/home.html',
-    controller: 'HomeCtrl'
-})
-
-*/

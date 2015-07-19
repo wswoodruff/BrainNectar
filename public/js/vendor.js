@@ -6,5 +6,6 @@ module.exports = function () {
     require("../bower_components/jquery/dist/jquery.js");
     require("../bower_components/angular/angular.js");
     require("../bower_components/ui-router/release/angular-ui-router.js");
-    require("../bower_components/angular-bootstrap/ui-bootstrap.js");
+    require("../bower_components/angular-strap/dist/angular-strap.js");
+    require("../bower_components/angular-strap/dist/angular-strap.tpl.js");
 }
