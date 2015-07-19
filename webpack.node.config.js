@@ -4,7 +4,7 @@ var path = require('path');
 
 // PATHS
 var PATHS = {  
-  app: __dirname + '/public'
+  app: __dirname + '/public',
 };
 
 var config = {};
@@ -12,19 +12,9 @@ var config = {};
 config.devtool = 'source-map';
 config.context = PATHS.app;
 
-// For hot reload during development, use this entry
-/**/
-config.entry = {
-    app: ['webpack/hot/dev-server', './js/bootstrapApp.js']
-};
-/**/
-
-// For production, must use this entry
-/** /
 config.entry = {
     app: ['./js/bootstrapApp.js']
 };
-/**/
 
 config.output = {
   path: PATHS.app,

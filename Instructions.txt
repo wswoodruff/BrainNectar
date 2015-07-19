@@ -1,53 +1,23 @@
 /*
  * Table of Contents
- * 
- * 1. Note about editing webpack.config.js for running in Node VS webpack's dev environment
  *
- * 2. Instructions to run project locally with Node
+ * 1. Instructions to run project locally with Node
  *
- * 3. Instructions to run the dev environment via webpack
+ * 2. Instructions to run the dev environment via webpack
  *
- * 4. Module locations
+ * 3. Module locations
  *
  */
 
 
-/*
- * 1. Note:
- */
-
-When you surround a section of code with /**/ /**/, putting a space before the last slash in the first "/**/" comments out the section. so:
-/** /This is commented out/**/
-/**/This is not commented out/**/
-
-For webpack, the dev settings and production settings are different because for dev webpack has a nice hot-reload server, and you either build the bundle.js to look for that or not by specifying an entry point in the "webpack.config.js" file.
-
-To run the project in Node, edit the webpack.config.js file found in the root directory of the project to have 
-
-config.entry = {
-    app: ['./js/bootstrapApp.js']
-};
-
-uncommented.
-
-and to develop with the hot-reload server, comment out that entry and uncomment this one: 
-
-config.entry = {
-    app: ['webpack/hot/dev-server', './js/bootstrapApp.js']
-};
-
-
-
 
 /*
- * 2. Instructions to run project locally with Node
+ * 1. Instructions to run project locally with Node
  */
 
 i. If you haven't done so already, clone the Brain Nectar repo locally and run "npm install" in the root directory of the project to install the project dependencies.
 
-ii. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that includes  'webpack/hot/dev-server', and uncomment the one that just has './js/bootstrapApp.js'.
-
-iii. Open Terminal, navigate to the root directory of the project and type:
+ii. Open Terminal, navigate to the root directory of the project and type:
 
         "npm start"
 
@@ -56,17 +26,17 @@ iii. Open Terminal, navigate to the root directory of the project and type:
 
 
 /*
- * 3. Instructions to run the dev environment via webpack
+ * 2. Instructions to run the dev environment via webpack
  */
 
 
 i. If you haven't done so already, clone the Brain Nectar repo locally run "npm install" in the root directory of the project to install the project dependencies.
 
-ii. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that just has './js/bootstrapApp.js', and uncomment the one that includes 'webpack/hot/dev-server'.
-
-iii. Open Terminal, navigate to the root directory of the project and type:
+ii. Open Terminal, navigate to the root directory of the project and type:
         
         "npm run dev"
+
+
 
 This runs webpack and opens webpack's hot dev server, which watches modules and refreshes the browser when a module changes. This includes Sass files.
 
@@ -76,12 +46,15 @@ This is nice since webpack only rebuilds and injects the module that changed, ra
 
 
 /*
- * 4. Module locations
+ * 3. Module locations
  */
 
 JavaScript modules are in /public/js/
 
 Sass files are in /public/css/
+
+
+
 
 
 

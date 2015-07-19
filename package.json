@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack && npm run open:node && node bin/www",
+    "start": "webpack --config webpack.node.config.js && npm run open:node && node bin/www",
     "dev": "webpack && npm run open:webpack && npm run wds",
     "wds": "webpack-dev-server --content-base public/ --hot --inline",
     "open:webpack": "opener http://localhost:8080/webpack-dev-server/",
