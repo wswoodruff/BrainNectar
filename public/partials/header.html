@@ -1,18 +1,20 @@
 <nav bs-navbar class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">BN</a>
+        <a class="navbar-brand" ui-sref="main.home">BN</a>
     </div>
 
     <ul class="nav navbar-nav">
         <li><a ui-sref="main.home">Home</a></li>
         <li><a ui-sref="main.shop">Shop</a></li>
-        <li><a ui-sref="main.cart">Cart</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="main.cart"><span class="glyphicon glyphicon-shopping-cart cartIcon"></span></a></li>
     </ul>
 </nav>
 
 <header class="jumbotron">
 <div class="container">
-    <h1>Brain Nectar!</h1>
+    <h1>Brain Nectar</h1>
     <p>
     Brain Nectar is a delicious beverage that improves your cognitive abilities! It's FDA approved and can be consumed safely in any quantity. Be limitless!
     </p>
