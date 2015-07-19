@@ -1,19 +1,11 @@
-<header class="jumbotron">
-<nav></nav>
-<div class="container">
-    <h1>Brain Nectar!</h1>
-    <p>Brain Nectar is a delicious beverage that improves your cognitive abilities! It's FDA approved and can be consumed safely in any quantity. Be limitless!</p>
-</div>
-</header>
 
-<div class="container">
-    <div ui-view="sidebar"></div>
-</div>
 
-<div class="container">
-    <div ui-view="content"></div>
-</div>
+<!-- Contains the layout for the site -->
 
-<footer class="container">
-    Think Drink.
-</footer>
+<div ui-view="header"></div>
+
+<div ui-view="sidebar"></div>
+
+<div ui-view="page"></div>
+
+<div ui-view="footer"></div>
