@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run open:node && node bin/www",
+    "start": "webpack && npm run open:node && node bin/www",
     "dev": "webpack && npm run open:webpack && npm run wds",
     "wds": "webpack-dev-server --content-base public/ --hot --inline",
     "open:webpack": "opener http://localhost:8080/webpack-dev-server/",
@@ -19,10 +19,19 @@
     "serve-favicon": "~2.2.1"
   },
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "css-loader": "^0.15.5",
+    "csswring": "^3.0.5",
+    "file-loader": "^0.8.4",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
     "opener": "^1.4.1",
     "parallelshell": "^1.1.1",
+    "postcss": "^4.1.16",
+    "postcss-loader": "^0.5.1",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.9.0"
   }

@@ -20,7 +20,7 @@ When you surround a section of code with /**/ /**/, putting a space before the l
 /** /This is commented out/**/
 /**/This is not commented out/**/
 
-For webpack, the dev settings and production settings are different because for dev webpack has a hot-reload server, and you either build the bundle.js to look for that or not by specifying an entry point in the "webpack.config.js" file.
+For webpack, the dev settings and production settings are different because for dev webpack has a nice hot-reload server, and you either build the bundle.js to look for that or not by specifying an entry point in the "webpack.config.js" file.
 
 To run the project in Node, edit the webpack.config.js file found in the root directory of the project to have 
 
@@ -36,8 +36,6 @@ config.entry = {
     app: ['webpack/hot/dev-server', './js/bootstrapApp.js']
 };
 
-Then in Terminal navigate to the root directory of the project and run the "webpack" command to build the project.
-
 
 
 
@@ -45,14 +43,11 @@ Then in Terminal navigate to the root directory of the project and run the "webp
  * 2. Instructions to run project locally with Node
  */
 
+i. If you haven't done so already, clone the Brain Nectar repo locally and run "npm install" in the root directory of the project to install the project dependencies.
 
+ii. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that includes  'webpack/hot/dev-server', and uncomment the one that just has './js/bootstrapApp.js'.
 
-
-1. Clone the Brain Nectar repo locally
-
-2. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that includes the 'webpack/hot/dev-server', and uncomment the one that just has './js/bootstrapApp.js'. Then run the 'webpack' command in the root of the directory.
-
-3. Open Terminal, navigate to the root directory of the project and type:
+iii. Open Terminal, navigate to the root directory of the project and type:
 
         "npm start"
 
@@ -65,10 +60,11 @@ Then in Terminal navigate to the root directory of the project and run the "webp
  */
 
 
+i. If you haven't done so already, clone the Brain Nectar repo locally run "npm install" in the root directory of the project to install the project dependencies.
 
-1. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that just has './js/bootstrapApp.js', and uncomment the one that includes 'webpack/hot/dev-server'. The command you run in the next step runs webpack for you.
+ii. As described in the note above, in the file 'webpack.config.js' comment out the entrypoint that just has './js/bootstrapApp.js', and uncomment the one that includes 'webpack/hot/dev-server'.
 
-1. Open Terminal, navigate to the root directory of the project and type:
+iii. Open Terminal, navigate to the root directory of the project and type:
         
         "npm run dev"
 
