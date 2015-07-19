@@ -28,6 +28,7 @@ config.entry = {
 
 config.output = {
   path: PATHS.app,
+  publicPath: '/public/',
   filename: 'bundle.js'
 }
 
