@@ -50,15 +50,16 @@ html, body
  *  Custom CSS
  */
 
-
 .nav, .pagination, .carousel, .panel-title a 
     cursor: pointer
 
 #mainView
-    height: 100%
+    font-size: 20px
 
 footer
+    position: absolute
     bottom: 0
+    font-size: 20px
 
 
 
