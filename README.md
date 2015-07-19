@@ -7,7 +7,7 @@ Brain Nectar is a delicious beverage that improves your cognitive abilities! It'
 
 * Instructions to run project locally with Node
 
-* Instructions to run the dev environment via webpack
+* Instructions to run the hot update dev server environment via webpack
 
 * Module locations
 
@@ -16,7 +16,7 @@ Brain Nectar is a delicious beverage that improves your cognitive abilities! It'
 #### Instructions to run project locally with Node
 
 
-1. If you haven't done so already, clone the Brain Nectar repo locally and run "npm install" in the root directory of the project to install the project dependencies.
+1. If you haven't done so already, clone the Brain Nectar repo locally and run ```npm install``` in the root directory of the project to install the project dependencies.
 
 2. Open Terminal, navigate to the root directory of the project and type:
 ```
@@ -28,7 +28,7 @@ npm start
 #### Instructions to run the dev environment via webpack
 
 
-1. If you haven't done so already, clone the Brain Nectar repo locally run "npm install" in the root directory of the project to install the project dependencies.
+1. If you haven't done so already, clone the Brain Nectar repo locally and run ```npm install``` in the root directory of the project to install the project dependencies.
 
 2. Open Terminal, navigate to the root directory of the project and type:
 ```
