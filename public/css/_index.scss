@@ -1,5 +1,12 @@
 
+$navbar-height: 53px
 $break-md-max: 768px
+
+$primary-color: #F4CB10
+$primary-complement-color: #F0BA11
+$secondary-color: #D87E12
+$secondary-complement-color: #BE5313
+$tertiary-color: #567243
 
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
@@ -32,6 +39,12 @@ html, body
 
 .mainView
     font-size: 20px
+
+.navbar-brand
+    padding-top: 13px
+
+.header
+    margin-top: $navbar-height
 
 .sidebar
     width: 250px
