@@ -41,7 +41,6 @@ body
     padding:0px
     width:100%
 
-
 html, body
     height: 100%
 
@@ -56,8 +55,8 @@ html, body
 #mainView
     font-size: 20px
 
-nav .cartIcon
-    padding-right: 15px
+.sidebar
+    max-width: 180px
 
 footer
     position: absolute

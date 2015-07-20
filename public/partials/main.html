@@ -1,11 +1,14 @@
 
-
 <!-- Contains the layout for the site -->
 
+
 <div ui-view="header"></div>
-
-<div ui-view="sidebar"></div>
-
-<div ui-view="page"></div>
+    
+<div class="container-fluid">
+    <div class="row">
+        <div ui-view="sidebar" class="col-xs-3 sidebar"></div>
+        <div ui-view="page" class="col-xs-9"></div>
+    </div>
+</div>
 
 <div ui-view="footer"></div>

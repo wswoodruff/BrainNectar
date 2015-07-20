@@ -9,14 +9,14 @@
           </button>
         <a class="navbar-brand" ui-sref="main.home">BN</a>
     </div>
-    
+
     <div class="collapse navbar-collapse" collapse="navCollapsed">
         <ul class="nav navbar-nav">
-            <li class="active"><a ui-sref="main.home">Home</a></li>
-            <li><a ui-sref="main.shop">Shop</a></li>
+            <li ui-sref-active="active"><a ui-sref="main.home">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="main.shop">Shop</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="main.cart"><span class="glyphicon glyphicon-shopping-cart cartIcon"></span></a></li>
+            <li ui-sref-active="active"><a ui-sref="main.cart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
         </ul>
     </div>
     </div>
@@ -24,9 +24,6 @@
 
 <header class="jumbotron">
 <div class="container">
-    <h1>Brain Nectar</h1>
-    <p>
-    Brain Nectar is a delicious beverage that improves your cognitive abilities! It's FDA approved and can be consumed safely in any quantity. Be limitless!
-    </p>
+    <h1>Brain Nectar <small>Be Limitless</small></h1>
 </div>
 </header>
