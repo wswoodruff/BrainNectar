@@ -1,21 +1,11 @@
 
-$navbar-height: 53px
-$break-md-max: 768px
+$navbar-height: 53px;
+$break-md-max: 768px;
 
-$primary-color: #F4CB10
-$primary-complement-color: #F0BA11
-$secondary-color: #D87E12
-$secondary-complement-color: #BE5313
-$tertiary-color: #567243
-
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-
-
-/*
- *  CSS Reset
- */
+@import "_colors.scss";
 
 
 *
@@ -37,14 +27,22 @@ html, body
 .nav, .pagination, .carousel, .panel-title a 
     cursor: pointer
 
+
 .mainView
     font-size: 20px
 
-.navbar-brand
-    padding-top: 13px
+.navbar
+    border: none
+    .cart
+        padding: 15px
+    .navbar-brand
+        padding-top: 13px
+
 
 .header
     margin-top: $navbar-height
+    .jumbotron
+        color: $secondary-color
 
 .sidebar
     width: 250px

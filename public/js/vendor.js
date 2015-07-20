@@ -1,6 +1,6 @@
 module.exports = function () {
     /* Styles */
-    require('../css/_index.scss');
+    require('../css/main.scss');
 
     /* JS */
     require("../bower_components/jquery/dist/jquery.js");
