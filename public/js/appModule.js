@@ -13,6 +13,10 @@ $stateProvider
                 templateUrl: 'partials/main.html',
                 controller: 'MainCtrl'
             },
+            'nav@main': {
+                templateUrl: 'partials/nav.html',
+                controller: 'NavCtrl'
+            },
             'header@main': {
                 templateUrl: 'partials/header.html',
                 controller: 'HeaderCtrl'
