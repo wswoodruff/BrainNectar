@@ -1,4 +1,4 @@
-module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'mgcrea.ngStrap'])
+module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap'])
 
 .run(function() {
     
