@@ -17,4 +17,6 @@ module.exports = angular.module('app.controllers', [])
 
 .controller('CartCtrl', require('./cartCtrl'))
 
+.controller('CheckoutCtrl', require('./checkoutCtrl'))
+
 .controller('FooterCtrl', require('./footerCtrl'))

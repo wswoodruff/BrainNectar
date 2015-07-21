@@ -53,6 +53,12 @@ $stateProvider
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
     })
+
+    .state('main.checkout', {
+        url:'/checkout',
+        templateUrl: 'partials/checkout.html',
+        controller: 'CheckoutCtrl'
+    })
     
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/');
