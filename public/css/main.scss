@@ -1,6 +1,7 @@
 
 $navbar-height: 53px;
 $break-md-max: 768px;
+$sidebar-width: 280px;
 
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
@@ -45,7 +46,7 @@ html, body
         color: $secondary-color
 
 .sidebar
-    width: 280px
+    width: $sidebar-width
     height: 100%
     float: left
     padding: 0 20px 20px 20px
@@ -69,6 +70,14 @@ html, body
 
 .page
     padding: 0 20px 30px 20px
+    margin-left: $sidebar-width
+
+.checkout
+    .ssl-block
+        padding: 6px 5px 5px 8px
+        background-color: rgba(141, 198, 82, .3);
+        .glyphicon-lock
+            color: #84B94D
 
 footer
     font-size: 20px
@@ -82,6 +91,8 @@ footer
         .sales-card
             
     
+
+
 
 
 
