@@ -95,8 +95,7 @@ function simulateNewPurchase() {
     if(futurePurchasesSimulated == numFuturePurchases)
         return;
     setTimeout(function() {
-
-        serverFeedData.push(getNewPurchase());
+        serverFeedData.unshift(getNewPurchase());
         console.log("Send server push message.");
         base.emitter.emit("serverPushMessage", serverFeedData);
         $(document).trigger("serverPushMessage", serverFeedData);
@@ -104,7 +103,6 @@ function simulateNewPurchase() {
 
     }, getRandTimeDelay())
 }
-
 
 // kickoff!
 simulateNewPurchase();
