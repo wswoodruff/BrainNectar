@@ -20,11 +20,11 @@ var messageFromCustomer = [
     "I can talk to animals!",
     "I can speak robot!",
     "I can breathe under water!",
-    "I created a nuclear reactor in my basement!",
+    "I built a nuclear reactor in my basement!",
     "I got abducted by aliens!",
-    "I invented a cure for laziness!",
     "I'm not confused anymore!",
-    "Speak like Yoda, I can!"
+    "Speak like Yoda, I can!",
+    "I can split atoms with my brain!"
 ]
 
 messageFromCustomer = chance.shuffle(messageFromCustomer);
@@ -71,8 +71,8 @@ function getTimeAgnosticPurchaseDetails() {
 
 function getPastTime() {
     // There are 43,200,000 milliseconds in 12 hours.
-    var randUpTo1Month = chance.integer({min: 1, max: 43200000});
-    return new moment().subtract(randUpTo1Month, 'milliseconds');
+    var randUpTo12Hours = chance.integer({min: 1, max: 43200000});
+    return new moment().subtract(randUpTo12Hours, 'milliseconds');
 }
 
 function getOldPurchase(customDetails) {
@@ -175,6 +175,7 @@ function simulateNewPurchase() {
 
 // kickoff!
 simulateNewPurchase();
+
 
 
 /*
