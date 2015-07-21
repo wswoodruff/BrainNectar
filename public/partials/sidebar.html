@@ -1,10 +1,13 @@
+<h3 class="sidebarTitle">See realtime global purchases
+and what customers are saying about Brain Nectar!</h3>
 <div class="sales-feed" ng-repeat="sale in salesArray">
     <div class="sales-card">
         {{sale.name}}
-        {{sale.quantity}}
-        {{sale.city}}
-        {{sale.country}}
-        {{sale.relativeTime}}
+        {{sale.quantity}} cases<br>
+        {{sale.city}}<br>
+        {{sale.country}}<br>
+        {{sale.relativeTime}}<br>
+        {{sale.message}}
     </div>
     <br>
 </div>

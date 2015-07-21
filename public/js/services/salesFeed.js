@@ -11,22 +11,43 @@ var $ = require("../../bower_components/jquery/dist/jquery.js");
     what's on the server.
 */
 
+var messageFromCustomer = [
+    "I drank 2 of these and passed the bar exam!",
+    "I can multitask!",
+    "I can fly!",
+    "I can has rocket science!",
+    "I built a time machine!",
+    "I can talk to animals!",
+    "I can speak robot!",
+    "I can breathe under water!",
+    "I created a nuclear reactor in my basement!",
+    "I dug a hole to China!",
+    "I got abducted by aliens!",
+    "I invented a cure for ADD!"
+]
+
+messageFromCustomer = chance.shuffle(messageFromCustomer);
+var messageIndex = 0;
+
+
+var serverFeedData = [];
+serverFeedData.push(getTimeAgnosticPurchaseDetails());
 
 // Put the author in the story, of course.
-var serverFeedData = [{
-    name: "Bill",
-    quantity: chance.integer({min:1, max:30}) * 6,
-    city: "Woolwich",
-    country: "United States",
-    time: getPastTime()
-}];
+// override defaults
+var me = serverFeedData[0];
+me.name = "Bill";
+me.city = "Woolwich";
+me.country = "United States";
+me.time = moment().subtract(1, 'minutes');
 
 function getTimeAgnosticPurchaseDetails() {
     return {
         name: chance.first(),
-        quantity: chance.integer({min:1, max:30}) * 6,
+        quantity: chance.integer({min:3, max:30}),
         city: chance.city(),
-        country: chance.country({full: true})
+        country: chance.country({full: true}),
+        message: getMessage()
     }
 }
 
@@ -71,6 +92,25 @@ serverFeedData.sort(function(a, b) {
     }
 })
 
+/* 
+    Messages have to be added after sorting by time
+    so duplicates don't show up near eachother
+*/
+
+function getMessage() {
+    if(messageIndex == messageFromCustomer.length) {
+        messageIndex = 0;
+    }
+    var message = messageFromCustomer[messageIndex];
+    messageIndex++;
+    return message;
+}
+
+serverFeedData.reverse();
+serverFeedData.map(function(purchase) {
+    purchase.message = getMessage();
+})
+serverFeedData.reverse();
 
 /*
     This section simulates live updates
@@ -87,20 +127,26 @@ function getRandTimeDelay() {
     return chance.integer({min: 10000, max: 30000});
 }
 
-var numFuturePurchases = 14;
+var maxFuturePurchases = 40; // let's only allow 40 new ones
 var futurePurchasesSimulated = 0;
 
 // This is where the magic happens
 function simulateNewPurchase() {
-    if(futurePurchasesSimulated == numFuturePurchases)
+    if(futurePurchasesSimulated == maxFuturePurchases) {
+        /* This updates moment.js's .fromNow() relative time message parsing 
+            i.e. "a couple seconds ago", "6 hours ago"
+            after I've added the max amount of new purchases.
+        */
+        base.emitter.emit("serverPushMessage", serverFeedData);
         return;
+    }
     setTimeout(function() {
         serverFeedData.unshift(getNewPurchase());
-        console.log("Send server push message.");
+        if(serverFeedData.length > 20) {
+            serverFeedData.pop();
+        }
         base.emitter.emit("serverPushMessage", serverFeedData);
-        $(document).trigger("serverPushMessage", serverFeedData);
         simulateNewPurchase();
-
     }, getRandTimeDelay())
 }
 

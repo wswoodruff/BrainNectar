@@ -45,11 +45,14 @@ html, body
         color: $secondary-color
 
 .sidebar
-    width: 250px
+    width: 280px
     height: 100%
     float: left
     padding: 0 20px 20px 30px
     font-size: 14px;
+    overflow-y: auto;
+    .sidebarTitle
+        margin-top: 0
 
 .page
     padding: 0 20px 30px 20px
