@@ -1,3 +1,4 @@
+var base = require('../baseModule.js');
 var moment = require('../../bower_components/moment/moment.js');
 var $ = require("../../bower_components/jquery/dist/jquery.js");
 
@@ -33,13 +34,13 @@ function getTimeAgnosticPurchaseDetails() {
 
 /*
     This section generates past purchases 
-    ranging from 6 months ago to today.
+    ranging from yesterday to today.
 */
 
 function getPastTime() {
-    // There are 15,778,800,000 milliseconds in 6 months.
-    var randUpTo6Months = chance.integer({min: 1, max: 15778800000});
-    return new moment().subtract(randUpTo6Months, 'milliseconds');
+    // There are 86,400,000 milliseconds in a day.
+    var randUpTo1Month = chance.integer({min: 1, max: 86400000});
+    return new moment().subtract(randUpTo1Month, 'milliseconds');
 }
 
 function getOldPurchase(customDetails) {
@@ -64,9 +65,9 @@ for(var i=0; i<numPastPurchases; i++) {
 // sort by oldest to newest time
 serverFeedData.sort(function(a, b) {
     if(a.time < b.time) {
-        return -1;
-    } else {
         return 1;
+    } else {
+        return -1;
     }
 })
 
@@ -96,7 +97,8 @@ function simulateNewPurchase() {
     setTimeout(function() {
 
         serverFeedData.push(getNewPurchase());
-        console.log("trigger server push message: " + JSON.stringify(serverFeedData));
+        console.log("Send server push message.");
+        base.emitter.emit("serverPushMessage", serverFeedData);
         $(document).trigger("serverPushMessage", serverFeedData);
         simulateNewPurchase();
 
@@ -114,12 +116,13 @@ simulateNewPurchase();
 
 var frontEndCallback;
 
-$(document).on("serverPushMessage", function(event, data) {
-    console.log("Got server push message: " + JSON.stringify(data));
+base.emitter.on("serverPushMessage", function(data) {
+    console.log("Got server push message.");
     runFrontEndCallback(data);
 });
 
 function runFrontEndCallback(data) {
+    console.log("serverFeedData length: " + data.length);
     frontEndCallback(data);
 }
 
@@ -130,7 +133,7 @@ module.exports = function() {
             callback();
         },chance.integer({min: 500, max: 1000}))
     }
-    
+
     return {
         getDataAndBindCallbackForServerPush: function(callback) {
             frontEndCallback = callback;
