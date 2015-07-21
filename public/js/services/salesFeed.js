@@ -23,7 +23,7 @@ var serverFeedData = [{
 
 function getTimeAgnosticPurchaseDetails() {
     return {
-        name: chance.name,
+        name: chance.first(),
         quantity: chance.integer({min:1, max:30}) * 6,
         city: chance.city(),
         country: chance.country({full: true})
@@ -34,12 +34,12 @@ function getTimeAgnosticPurchaseDetails() {
 
 /*
     This section generates past purchases 
-    ranging from yesterday to today.
+    ranging from 12 hours ago to now.
 */
 
 function getPastTime() {
-    // There are 86,400,000 milliseconds in a day.
-    var randUpTo1Month = chance.integer({min: 1, max: 86400000});
+    // There are 43,200,000 milliseconds in 12 hours.
+    var randUpTo1Month = chance.integer({min: 1, max: 43200000});
     return new moment().subtract(randUpTo1Month, 'milliseconds');
 }
 
