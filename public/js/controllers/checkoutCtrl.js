@@ -1,8 +1,11 @@
-module.exports = function($scope, Cart) {
+module.exports = function($scope, CartManager) {
+    
+    var itemsInCart = CartManager.getCartItems();
+
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        console.log("checkout loaded");
     })
 
-    Cart.getCartItems();
+    
+
 }

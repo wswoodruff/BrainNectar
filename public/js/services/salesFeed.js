@@ -13,7 +13,6 @@ var $ = require("../../bower_components/jquery/dist/jquery.js");
 
 var messageFromCustomer = [
     "I drank 2 of these and passed the bar exam!",
-    "I can multitask!",
     "I can fly!",
     "I can has rocket science!",
     "I built a time machine!",

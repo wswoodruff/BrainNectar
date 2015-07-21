@@ -1,8 +1,26 @@
 var $ = require("../../bower_components/jquery/dist/jquery.js");
 
-module.exports = function($scope, $state) {
+var pageOriginalMargin;
+
+module.exports = function($scope, $state, MobileWidthWatch) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        console.log("main loaded");
+        pageOriginalMargin = $(".page").css("margin-left");
     })
+
+
+    function onMobileWidthToggle(isMobileWidth) {
+        if(isMobileWidth) {
+            $(".page").css({
+                margin: 0
+            })
+        } else {
+            $(".page").css({
+                marginLeft: pageOriginalMargin
+            })
+        }
+    }
+
+    MobileWidthWatch.addMobileCallback(onMobileWidthToggle);
+
 }

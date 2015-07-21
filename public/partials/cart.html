@@ -1,2 +1,11 @@
-See what stuff you bought!<br>
-<a ui-sref="main.checkout">Checkout</a>
+<div class="cart">
+    <div ng-if="!itemsInCart()" class="noCartItems">
+        Cart is empty
+        <br>
+        <button type="button" class="btn btn-success" ui-sref="main.shop">Shop!</button>
+    </div>
+
+    <div ng-if="itemsInCart()" class="cartItems">
+        <a ui-sref="main.checkout">Checkout</a>
+    </div>
+</div>

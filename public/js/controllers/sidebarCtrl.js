@@ -4,7 +4,6 @@ var $ = require('../../bower_components/jquery/dist/jquery.js');
 module.exports = function($scope, SalesFeed) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        console.log("sidebar loaded");
         if($(window).width() <= 768) {
             $scope.mobileWidth = true;
         }

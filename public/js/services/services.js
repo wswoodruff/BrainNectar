@@ -6,4 +6,4 @@ module.exports = angular.module('app.services', [])
 
 .factory('ShopItems', require('./shopItems'))
 
-.factory('Cart', require('./cartManager'))
+.factory('CartManager', require('./cartManager'))

@@ -1,1 +1,15 @@
-Shop your sox off!
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4" ng-repeat="shopItem in shopItems">
+            <div class="thumbnail">
+                <img src="{{shopItem.image.src}}" alt="{{shopItem.image.alt}}">
+                <div class="caption">
+                    {{shopItem.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary" ui-sref="main.cart">View Cart</button>
