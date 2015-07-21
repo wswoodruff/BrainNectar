@@ -1,2 +1,31 @@
-Sidebar
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum 
+<div ng-if="!mobileWidth">
+    <h3 class="sidebarTitle">See realtime global purchases
+    and what customers are accomplishing with Brain Nectar!</h3>
+
+    <div class="sales-feed list-group">
+        <div class="sales-card list-group-item" ng-repeat="sale in salesArray">
+            <div class="title">
+                {{sale.name}}
+            </div>
+            from {{sale.city}}, {{sale.country}}<br>
+            bought {{sale.quantity}} cases {{sale.relativeTime}}!<br>
+            <div class="quote">&#8212; "{{sale.message}}"</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="mobileWidth">
+    <h3 class="sidebarTitle">See the latest realtime purchase and what customers are accomplishing with Brain Nectar!</h3>
+    <div ng-if="mobileWidth" class="single-recent-sale">
+        <div class="sales-card list-group-item">
+            <div class="title">
+                {{salesArray[0].name}}
+            </div>
+            from {{salesArray[0].city}}, {{salesArray[0].country}}<br>
+            bought {{salesArray[0].quantity}} cases {{salesArray[0].relativeTime}}!<br>
+            <div class="quote">&#8212; "{{salesArray[0].message}}"</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

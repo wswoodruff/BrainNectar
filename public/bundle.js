@@ -46927,7 +46927,11 @@
 	var main = Object.create(__webpack_require__(18));
 	
 	__webpack_require__(20);
+<<<<<<< HEAD
 	__webpack_require__(31);
+=======
+	__webpack_require__(30);
+>>>>>>> master
 	var appModule = __webpack_require__(32);
 	
 	// replaces ng-app="BrainNectar"
@@ -47271,6 +47275,7 @@
 	
 	module.exports = angular.module('app.controllers', [])
 	
+<<<<<<< HEAD
 	.controller('MainCtrl', __webpack_require__(22))
 	
 	.controller('NavCtrl', __webpack_require__(23))
@@ -47282,18 +47287,36 @@
 	.controller('SidebarCtrl', __webpack_require__(26))
 	
 	.controller('HomeCtrl', __webpack_require__(21))
+=======
+	.controller('MainCtrl', __webpack_require__(21))
+	
+	.controller('NavCtrl', __webpack_require__(22))
+	
+	.controller('HeaderCtrl', __webpack_require__(23))
+	
+	.controller('PageCtrl', __webpack_require__(24))
+	
+	.controller('SidebarCtrl', __webpack_require__(25))
+	
+	.controller('HomeCtrl', __webpack_require__(26))
+>>>>>>> master
 	
 	.controller('ShopCtrl', __webpack_require__(27))
 	
 	.controller('CartCtrl', __webpack_require__(28))
 	
+<<<<<<< HEAD
 	.controller('CheckoutCtrl', __webpack_require__(29))
 	
 	.controller('FooterCtrl', __webpack_require__(30))
+=======
+	.controller('FooterCtrl', __webpack_require__(29))
+>>>>>>> master
 
 
 /***/ },
 /* 21 */
+<<<<<<< HEAD
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47306,6 +47329,8 @@
 
 /***/ },
 /* 22 */
+=======
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope, $state) {
@@ -47317,7 +47342,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 23 */
+=======
+/* 22 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47330,7 +47359,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 24 */
+=======
+/* 23 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47342,7 +47375,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 25 */
+=======
+/* 24 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope, $state) {
@@ -47359,7 +47396,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 26 */
+=======
+/* 25 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47371,7 +47412,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 27 */
+=======
+/* 26 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47383,7 +47428,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 28 */
+=======
+/* 27 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47395,7 +47444,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 29 */
+=======
+/* 28 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47407,7 +47460,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 30 */
+=======
+/* 29 */
+>>>>>>> master
 /***/ function(module, exports) {
 
 	module.exports = function($scope) {
@@ -47419,14 +47476,25 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 31 */
 /***/ function(module, exports) {
+=======
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+>>>>>>> master
 
 	module.exports = angular.module('app.services', [])
+	
+	.factory('SalesFeed', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./salesFeed\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())))
 	
 
 
 /***/ },
+<<<<<<< HEAD
+=======
+/* 31 */,
+>>>>>>> master
 /* 32 */
 /***/ function(module, exports) {
 

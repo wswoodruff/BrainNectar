@@ -45,9 +45,27 @@ html, body
         color: $secondary-color
 
 .sidebar
-    width: 250px
+    width: 280px
+    height: 100%
     float: left
-    padding: 0 20px 20px 30px
+    padding: 0 20px 20px 20px
+    font-size: 14px
+    overflow-y: auto
+    .sidebarTitle
+        margin-top: 0
+    .sales-card
+        width: 100%
+        .title
+            background-color: #eee
+            font-weight: bold
+        .quote
+            color: #999
+            width: 100%
+            float: right
+            text-align: right
+    .clearfix
+        height: 0px
+        clear: both
 
 .page
     padding: 0 20px 30px 20px
@@ -58,8 +76,11 @@ footer
 
 @media (max-width: $break-md-max)
     .sidebar
-        width: 100%
+        width: auto
         float: none
+        height: auto
+        .sales-card
+            
     
 
 
