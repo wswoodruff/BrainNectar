@@ -1,2 +1,10 @@
-Sidebar
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum 
+<div class="sales-feed" ng-repeat="sale in salesArray">
+    <div class="sales-card">
+        {{sale.name}}
+        {{sale.quantity}}
+        {{sale.city}}
+        {{sale.country}}
+        {{sale.time}}
+    </div>
+    <br>
+</div>
