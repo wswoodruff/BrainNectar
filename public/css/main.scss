@@ -58,6 +58,14 @@ html, body
         .title
             background-color: #eee
             font-weight: bold
+        .quote
+            color: #999
+            width: 100%
+            float: right
+            text-align: right
+    .clearfix
+        height: 0px
+        clear: both
 
 .page
     padding: 0 20px 30px 20px
