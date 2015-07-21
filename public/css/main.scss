@@ -48,11 +48,16 @@ html, body
     width: 280px
     height: 100%
     float: left
-    padding: 0 20px 20px 30px
-    font-size: 14px;
-    overflow-y: auto;
+    padding: 0 20px 20px 20px
+    font-size: 14px
+    overflow-y: auto
     .sidebarTitle
         margin-top: 0
+    .sales-card
+        width: 100%
+        .title
+            background-color: #eee
+            font-weight: bold
 
 .page
     padding: 0 20px 30px 20px
@@ -63,8 +68,11 @@ footer
 
 @media (max-width: $break-md-max)
     .sidebar
-        width: 100%
+        width: auto
         float: none
+        height: auto
+        .sales-card
+            
     
 
 

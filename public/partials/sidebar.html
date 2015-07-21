@@ -1,13 +1,31 @@
-<h3 class="sidebarTitle">See realtime global purchases
-and what customers are saying about Brain Nectar!</h3>
-<div class="sales-feed" ng-repeat="sale in salesArray">
-    <div class="sales-card">
-        {{sale.name}}
-        {{sale.quantity}} cases<br>
-        {{sale.city}}<br>
-        {{sale.country}}<br>
-        {{sale.relativeTime}}<br>
-        {{sale.message}}
+<div ng-if="!mobileWidth">
+    <h3 class="sidebarTitle">See realtime global purchases
+    and what customers are saying about Brain Nectar!</h3>
+
+    <div class="sales-feed list-group">
+        <div class="sales-card list-group-item" ng-repeat="sale in salesArray">
+            <div class="title">
+                {{sale.name}}
+                {{sale.quantity}} cases
+            </div>
+            {{sale.city}}, {{sale.country}}<br>
+            {{sale.relativeTime}}<br>
+            "{{sale.message}}"
+        </div>
     </div>
-    <br>
+</div>
+
+<div ng-if="mobileWidth">
+    <h3 class="sidebarTitle">See the latest realtime purchase and what customers are saying about Brain Nectar!</h3>
+    <div ng-if="mobileWidth" class="single-recent-sale">
+        <div class="sales-card list-group-item">
+            <div class="title">
+                {{salesArray[0].name}}
+                {{salesArray[0].quantity}} cases<br>
+            </div>
+            {{salesArray[0].city}}, {{salesArray[0].country}}<br>
+            {{salesArray[0].relativeTime}}<br>
+            "{{salesArray[0].message}}"
+        </div>
+    </div>
 </div>

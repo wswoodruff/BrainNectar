@@ -21,9 +21,10 @@ var messageFromCustomer = [
     "I can speak robot!",
     "I can breathe under water!",
     "I created a nuclear reactor in my basement!",
-    "I dug a hole to China!",
     "I got abducted by aliens!",
-    "I invented a cure for ADD!"
+    "I invented a cure for laziness!",
+    "I'm not confused anymore!",
+    "Speak like Yoda, I can!"
 ]
 
 messageFromCustomer = chance.shuffle(messageFromCustomer);
@@ -31,10 +32,11 @@ var messageIndex = 0;
 
 
 var serverFeedData = [];
-serverFeedData.push(getTimeAgnosticPurchaseDetails());
 
 // Put the author in the story, of course.
-// override defaults
+serverFeedData.push(getTimeAgnosticPurchaseDetails());
+
+// override the defaults
 var me = serverFeedData[0];
 me.name = "Bill";
 me.city = "Woolwich";
@@ -51,6 +53,15 @@ function getTimeAgnosticPurchaseDetails() {
     }
 }
 
+function getTimeAgnosticPurchaseDetails() {
+    return {
+        name: chance.first(),
+        quantity: chance.integer({min:3, max:30}),
+        city: chance.city(),
+        country: chance.country({full: true}),
+        message: getMessage()
+    }
+}
 
 
 /*
@@ -111,6 +122,18 @@ serverFeedData.map(function(purchase) {
     purchase.message = getMessage();
 })
 serverFeedData.reverse();
+
+
+// Let's add a special guest!
+var zombie = serverFeedData[1];
+zombie.name = "Mr. Zombie";
+zombie.city = "Zombieland";
+zombie.country = "United States";
+zombie.quantity = chance.integer({min: 40, max: 60});
+zombie.time = moment().subtract(5, 'minutes');
+zombie.message = "I crave Brain Nectar!"
+
+
 
 /*
     This section simulates live updates
