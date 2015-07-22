@@ -69,13 +69,13 @@ function getTimeAgnosticPurchaseDetails() {
 
 /*
     This section generates past purchases 
-    ranging from 12 hours ago to now.
+    ranging from 30 minutes ago to now.
 */
 
 function getPastTime() {
-    // There are 43,200,000 milliseconds in 12 hours.
-    var randUpTo12Hours = chance.integer({min: 1, max: 43200000});
-    return new moment().subtract(randUpTo12Hours, 'milliseconds');
+    // There are 1,800,000 milliseconds in 30 minutes.
+    var randTimePeriod = chance.integer({min: 1, max: 1800000});
+    return new moment().subtract(randTimePeriod, 'milliseconds');
 }
 
 function getOldPurchase(customDetails) {
@@ -107,7 +107,7 @@ serverFeedData.sort(function(a, b) {
 })
 
 /* 
-    Messages have to be added after sorting by time
+    Customer messages have to be added after sorting by time
     so duplicates don't show up near eachother
 */
 
@@ -119,6 +119,17 @@ function getMessage() {
     messageIndex++;
     return message;
 }
+
+/*
+    Reason for the reverse() call:
+    TL;DR: Puts duplicate messages far away from each other
+    
+    Long version:
+    So purchase sections have messages populated from the
+    messageFromCustomer array in sequential order from the bottom of the sidebar to the top,
+    so new simulated realtime purchases will generate messages starting 1 index after
+    the topmost purchase in the sidebar.
+*/
 
 serverFeedData.reverse();
 serverFeedData.map(function(purchase) {
@@ -133,7 +144,7 @@ zombie.name = "Mr. Zombie";
 zombie.city = "Zombieland";
 zombie.country = "United States";
 zombie.quantity = chance.integer({min: 40, max: 60});
-zombie.time = moment().subtract(5, 'minutes');
+zombie.time = moment().subtract(2, 'minutes');
 zombie.message = "I crave Brain Nectar!"
 
 

@@ -11,13 +11,13 @@
                     <div class="input-group">
                         <span class="input-group-addon">Add to <span class="glyphicon glyphicon-shopping-cart"></span>: </span>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button class="btn btn-default" type="button" ng-click="decreaseInCart(shopItem.name)" ng-class="{disabled: shopItem.qtyInCart==0}">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                         </span>
-                        <input type="text" class="shopNumInCart" ng-model="">
+                        <div class="shopNumInCart">{{shopItem.qtyInCart}}</div>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button class="btn btn-default" type="button" ng-click="increaseInCart(shopItem.name)">
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </button>
                         </span>

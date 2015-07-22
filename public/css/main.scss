@@ -75,6 +75,11 @@ html, body
 .shop
     .shopNumInCart
         width: 100%
+        padding: 1.5px 2px
+        margin-left: -2px
+        text-align: center
+        border-top: solid 1px rgb(204, 204, 204)
+        border-bottom: solid 1px rgb(204, 204, 204)
 
 .checkout
     .ssl-block

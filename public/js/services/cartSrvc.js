@@ -6,7 +6,7 @@ var _ = require("lodash");
 module.exports = function(ShopSrvc) {
     
     /*
-        Objects in 'cartItems' are identical to objects in the
+        Objects in 'cartItems' are direct copies of objects in the
         'shopItems' array (inside the ShopSrvc service) except
         for the addition of a
         
