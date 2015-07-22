@@ -2,10 +2,16 @@
     <div ng-if="itemsInCart().length === 0" class="noCartItems">
         Cart is empty
         <br>
-        <button type="button" class="btn btn-success" ui-sref="main.shop">Shop!</button>
     </div>
 
     <div ng-if="itemsInCart().length > 0" class="cartItems">
-        <a ui-sref="main.checkout">Checkout</a>
+        <button class="btn btn-success btn-lg" ui-sref="main.checkout"><span class="checkout-text">Checkout</span><span class="circle-arrow-icon glyphicon glyphicon-circle-arrow-right"></span></button>
+
+        <br>
+        <br>
+        <br>
+        <button class="btn btn-success btn-lg" ui-sref="main.checkout">Checkout<span class="checkout-btn-right-arrow glyphicon glyphicon-menu-right"></span><span class="checkout-btn-right-arrow second-right-arrow glyphicon glyphicon-menu-right"></span></button>
     </div>
+
+    <button type="button" class="btn btn-primary" ui-sref="main.shop">Back to Shop</button>
 </div>
