@@ -99,6 +99,7 @@ config.addVendor("jquery", PATHS.bowerRoot + "/jquery/dist/jquery.js");
 config.addVendor("chance", PATHS.bowerRoot + "/chance/chance.js");
 config.addVendor("lodash", PATHS.bowerRoot + "/lodash/lodash.js");
 config.addVendor("ui-bootstrap", PATHS.bowerRoot + "/angular-bootstrap/ui-bootstrap.js");
+config.addVendor("ngAnimate", PATHS.bowerRoot + "/angular-animate/angular-animate.js");
 
 
 

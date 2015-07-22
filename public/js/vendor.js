@@ -13,4 +13,5 @@ module.exports = function () {
     require("ui-router");
     require("ui-bootstrap");
     require("lodash");
+    require("ngAnimate");
 }
