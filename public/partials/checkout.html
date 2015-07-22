@@ -1,7 +1,7 @@
 <div class="checkout">
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h2 class="panel-title">Sweet Stuff</h2>
+            <h1 class="panel-title">Sweet Stuff</h1>
         </div>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="item in itemsInCart">
@@ -13,6 +13,9 @@
                     </div>
                     <div class="media-body">
                             <ul class="list-group">
+                                <li class="item-title list-group-item">
+                                    {{item.name}}
+                                </li>
                                 <li class="list-group-item">
                                     Price: ${{item.price}}
                                 </li>

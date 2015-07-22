@@ -81,6 +81,15 @@ html, body
         border-top: solid 1px rgb(204, 204, 204)
         border-bottom: solid 1px rgb(204, 204, 204)
 
+.cart, .checkout
+    .media-object
+        width: 100px
+    .panel-title
+        font-size: 20px
+    .media
+        .item-title
+            background-color: #eee
+
 .cart
     .checkout-btn-right-arrow
         font-size: 20px
@@ -92,8 +101,6 @@ html, body
         padding-left: 8px
 
 .checkout
-    .media-object
-        width: 100px
     .total-checkout-price
         text-align: right
     .ssl-block

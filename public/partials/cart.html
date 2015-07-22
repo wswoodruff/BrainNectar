@@ -1,17 +1,50 @@
 <div class="cart">
-    <div ng-if="itemsInCart().length === 0" class="noCartItems">
+    <div ng-if="itemsInCart.length === 0" class="noCartItems">
         Cart is empty
         <br>
     </div>
 
-    <div ng-if="itemsInCart().length > 0" class="cartItems">
+    <div ng-if="itemsInCart.length > 0" class="cartItems">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1 class="panel-title">Sweet Stuff</h1>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in itemsInCart">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a>
+                                <img class="media-object" src="{{item.image.src}}" alt="{{item.image.alt}}"/>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                                <ul class="list-group">
+                                    <li class="item-title list-group-item">
+                                        {{item.name}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: ${{item.price}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        Quantity: {{item.qtyInCart}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        Subtotal: ${{item.price * item.qtyInCart}}.00
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
         <button class="btn btn-success btn-lg" ui-sref="main.checkout"><span class="checkout-text">Checkout</span><span class="circle-arrow-icon glyphicon glyphicon-circle-arrow-right"></span></button>
-
+        
         <br>
         <br>
-        <br>
+        
         <button class="btn btn-success btn-lg" ui-sref="main.checkout">Checkout<span class="checkout-btn-right-arrow glyphicon glyphicon-menu-right"></span><span class="checkout-btn-right-arrow second-right-arrow glyphicon glyphicon-menu-right"></span></button>
     </div>
-
+    <br>
     <button type="button" class="btn btn-primary" ui-sref="main.shop">Back to Shop</button>
 </div>
+

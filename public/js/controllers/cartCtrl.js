@@ -6,7 +6,6 @@ module.exports = function($scope, ShopSrvc) {
 
     var shopItems = ShopSrvc.getShopItems();
 
-    $scope.itemsInCart = function() {
-        return ShopSrvc.getItemsInCart();
-    }
+    var itemsInCart = ShopSrvc.getItemsInCart();
+    $scope.itemsInCart = itemsInCart;
 }
