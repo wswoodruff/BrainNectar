@@ -1,7 +1,36 @@
 <div class="checkout">
-    
-    
-    
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title">Sweet Stuff</h2>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in itemsInCart">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a>
+                            <img class="media-object" src="{{item.image.src}}" alt="{{item.image.alt}}"/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Price: ${{item.price}}
+                                </li>
+                                <li class="list-group-item">
+                                    Quantity: {{item.qtyInCart}}
+                                </li>
+                                <li class="list-group-item">
+                                    Subtotal: ${{item.price * item.qtyInCart}}.00
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="total-checkout-price panel-footer">
+            Total: ${{getTotalPrice()}}.00
+        </div>
+    </div>
     <div class="ssl-block">
         <span class="glyphicon glyphicon-lock"></span> Secure checkout with SSL
     </div>

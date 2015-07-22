@@ -10,7 +10,7 @@ module.exports = function($scope, ShopSrvc) {
     })
     
     $scope.numInCart = 0;
-
+    
     var shopItems = ShopSrvc.getShopItems();
 
     $scope.shopItems = shopItems;
