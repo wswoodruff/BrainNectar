@@ -9,7 +9,10 @@
 */
 
 
-var $ = require("../../bower_components/jquery/dist/jquery.js");
+/*
+    These shorthand requires are defined in webpack.config.js
+*/
+var $ = require("jquery");
 
 module.exports = function() {
 

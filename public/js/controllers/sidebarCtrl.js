@@ -1,5 +1,8 @@
-var moment = require('../../bower_components/moment/moment.js');
-var $ = require('../../bower_components/jquery/dist/jquery.js');
+/*
+    These shorthand requires are defined in webpack.config.js
+*/
+var moment = require('moment');
+var $ = require('jquery');
 
 module.exports = function($scope, SalesFeed) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {

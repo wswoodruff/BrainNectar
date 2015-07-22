@@ -1,6 +1,10 @@
 var base = require('../baseModule.js');
-var moment = require('../../bower_components/moment/moment.js');
-var $ = require("../../bower_components/jquery/dist/jquery.js");
+
+/*
+    These shorthand requires are defined in webpack.config.js
+*/
+var moment = require('moment');
+var $ = require("jquery");
 
 /* 
     This factory simulates new purchases every so often.

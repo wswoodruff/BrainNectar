@@ -1,4 +1,7 @@
-var _ = require("../../bower_components/lodash/lodash.js");
+/*
+    These shorthand requires are defined in webpack.config.js
+*/
+var _ = require("lodash");
 
 module.exports = function(ShopItems) {
     
