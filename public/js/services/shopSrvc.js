@@ -18,7 +18,7 @@ module.exports = function() {
     var shopItems = [
         {
             name: "Brain Nectar Case of 6",
-            price: "20",
+            price: "10",
             image: {
                 src: "../../img/can.jpg",
                 alt: "Brain Nectar can"
