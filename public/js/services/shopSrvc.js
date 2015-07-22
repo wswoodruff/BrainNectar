@@ -44,7 +44,15 @@ module.exports = function() {
             qtyInCart: 0
         }
     ];
-    
+
+    function findShopItem(itemName) {
+        shopItems.map(function(item) {
+            if(item.name == itemName) {
+                return item;
+            }
+        })
+    }
+
     return {
         getShopItems: function() {
             return shopItems;
@@ -59,6 +67,24 @@ module.exports = function() {
                 }
             });
             return items;
+        },
+        increaseQtyInCart: function(itemName) {
+            shopItems.map(function(item) {
+                if(item.name == itemName) {
+                    item.qtyInCart++;
+                }
+            })
+        },
+        decreaseQtyInCart: function(itemName) {
+            var shopItem;
+            shopItems.map(function(item) {
+                if(item.name == itemName) {
+                    shopItem = item;
+                }
+            })
+            if(shopItem.qtyInCart != 0) {
+                shopItem.qtyInCart--;
+            }
         }
     }
 }

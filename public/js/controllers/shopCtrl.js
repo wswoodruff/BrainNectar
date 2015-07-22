@@ -10,16 +10,16 @@ module.exports = function($scope, ShopSrvc) {
     })
     
     $scope.numInCart = 0;
-    
+
     var shopItems = ShopSrvc.getShopItems();
-    
+
     $scope.shopItems = shopItems;
-    
+
     $scope.increaseInCart = function(itemName) {
-        
+        ShopSrvc.increaseQtyInCart(itemName);
     }
 
     $scope.decreaseInCart = function(itemName) {
-        
+        ShopSrvc.decreaseQtyInCart(itemName);
     }
 }
