@@ -1,4 +1,5 @@
 <div class="cart">
+    <h1>Cart</h1>
     <div ng-if="itemsInCart.length === 0" class="noCartItems">
         Cart is empty
         <br>
@@ -7,7 +8,7 @@
     <div ng-if="itemsInCart.length > 0" class="cartItems">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h1 class="panel-title">Sweet Stuff</h1>
+                <h1 class="panel-title">Cart</h1>
             </div>
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="item in itemsInCart">
@@ -37,14 +38,10 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-success btn-lg" ui-sref="main.checkout"><span class="checkout-text">Checkout</span><span class="circle-arrow-icon glyphicon glyphicon-circle-arrow-right"></span></button>
-        
-        <br>
-        <br>
-        
-        <button class="btn btn-success btn-lg" ui-sref="main.checkout">Checkout<span class="checkout-btn-right-arrow glyphicon glyphicon-menu-right"></span><span class="checkout-btn-right-arrow second-right-arrow glyphicon glyphicon-menu-right"></span></button>
+        <button class="btn btn-success btn-lg btn-block" ui-sref="main.checkout"><span class="checkout-text">Continue to Checkout</span><span class="circle-arrow-icon glyphicon glyphicon-circle-arrow-right"></span></button>
+
     </div>
     <br>
-    <button type="button" class="btn btn-primary" ui-sref="main.shop">Back to Shop</button>
+    <button type="button" class="btn btn-primary btn-lg" ui-sref="main.shop"><span class="glyphicon glyphicon-arrow-left"></span> Back to Shop</button>
 </div>
 

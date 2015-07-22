@@ -3,7 +3,7 @@
     one thing being sold in the shop
 */
 
-module.exports = function($scope, ShopSrvc) {
+module.exports = function($scope, $state, ShopSrvc) {
 
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
