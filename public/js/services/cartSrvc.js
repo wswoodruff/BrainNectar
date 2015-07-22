@@ -3,11 +3,11 @@
 */
 var _ = require("lodash");
 
-module.exports = function(ShopItems) {
+module.exports = function(ShopSrvc) {
     
     /*
         Objects in 'cartItems' are identical to objects in the
-        'shopItems' array (inside the ShopItems service) except
+        'shopItems' array (inside the ShopSrvc service) except
         for the addition of a
         
         'quantity' property

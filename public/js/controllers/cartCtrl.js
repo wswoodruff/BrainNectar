@@ -1,6 +1,6 @@
-module.exports = function($scope, CartManager) {
+module.exports = function($scope, CartSrvc) {
     
-    var cartItems = CartManager.getCartItems();
+    var cartItems = CartSrvc.getCartItems();
 
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();

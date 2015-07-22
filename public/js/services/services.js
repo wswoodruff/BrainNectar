@@ -1,9 +1,9 @@
 module.exports = angular.module('app.services', [])
 
-.factory('MobileWidthWatch', require('./mobileWidthWatch'))
+.factory('ResizeSrvc', require('./resizeSrvc'))
 
-.factory('SalesFeed', require('./salesFeed'))
+.factory('SalesFeedSrvc', require('./salesFeedSrvc'))
 
-.factory('ShopItems', require('./shopItems'))
+.factory('ShopSrvc', require('./shopSrvc'))
 
-.factory('CartManager', require('./cartManager'))
+.factory('CartSrvc', require('./cartSrvc'))

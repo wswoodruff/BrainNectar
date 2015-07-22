@@ -4,7 +4,7 @@
 var moment = require('moment');
 var $ = require('jquery');
 
-module.exports = function($scope, SalesFeed) {
+module.exports = function($scope, SalesFeedSrvc) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
         if($(window).width() <= 768) {
@@ -20,8 +20,8 @@ module.exports = function($scope, SalesFeed) {
             $scope.salesArray = data;
         })
     }
-
-    SalesFeed.getDataAndBindCallbackForServerPush(applySalesFromServer);
+    
+    SalesFeedSrvc.getDataAndBindCallbackForServerPush(applySalesFromServer);
 
     $(window).resize(function() {
         if($(window).width() <= 768) {

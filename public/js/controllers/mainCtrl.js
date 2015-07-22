@@ -5,7 +5,7 @@ var $ = require("jquery");
 
 var pageOriginalMargin;
 
-module.exports = function($scope, $state, MobileWidthWatch) {
+module.exports = function($scope, $state, ResizeSrvc) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
         pageOriginalMargin = $(".page").css("margin-left");
@@ -23,7 +23,7 @@ module.exports = function($scope, $state, MobileWidthWatch) {
             })
         }
     }
-
-    MobileWidthWatch.addMobileCallback(onMobileWidthToggle);
+    
+    ResizeSrvc.addMobileCallback(onMobileWidthToggle);
 
 }

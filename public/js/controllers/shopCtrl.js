@@ -3,14 +3,14 @@
     one thing being sold in the shop
 */
 
-module.exports = function($scope, ShopItems) {
+module.exports = function($scope, ShopSrvc) {
 
-    $scope.shopItems = ShopItems.getShopItems();
+    $scope.shopItems = ShopSrvc.getShopItems();
 
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
     })
-
-
+    
+    
 
 }
