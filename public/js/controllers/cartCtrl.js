@@ -8,4 +8,7 @@ module.exports = function($scope, ShopSrvc) {
 
     var itemsInCart = ShopSrvc.getItemsInCart();
     $scope.itemsInCart = itemsInCart;
+    $scope.getCartSubtotal = function() {
+        return ShopSrvc.getCartSubtotal();
+    }
 }

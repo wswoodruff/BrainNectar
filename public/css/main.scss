@@ -80,6 +80,8 @@ html, body
         text-align: center
         border-top: solid 1px rgb(204, 204, 204)
         border-bottom: solid 1px rgb(204, 204, 204)
+    .price
+        font-weight: bold
 
 .cart, .checkout
     .media-object
@@ -89,6 +91,9 @@ html, body
     .media
         .item-title
             background-color: #eee
+    .cart-total
+        text-align: right
+        font-weight: bold
 
 .cart
     .btn-block
@@ -98,21 +103,34 @@ html, body
             font-size: 22px
     .checkout-btn-right-arrow
         font-size: 20px
+
     .checkout-btn-right-arrow.second-right-arrow
         margin-left: -12px
         margin-right: -5px
+
     .circle-arrow-icon
         font-size: 20px
         padding-left: 8px
 
 .checkout
-    .total-checkout-price
-        text-align: right
+    .mandatoryAsterisk
+        color: #dd0000
+        font-size: 15px
+    .shippingAddress
+        .panel-heading
+            cursor: pointer
+        .panel-title
+            display: inline-block
+        .shippingAddressCheckbox
+            cursor: pointer
     .ssl-block
         padding: 6px 5px 5px 8px
         background-color: rgba(141, 198, 82, .3);
         .glyphicon-lock
             color: #84B94D
+    .grand-total
+        font-weight: bold
+        text-align: right
 
 footer
     font-size: 20px

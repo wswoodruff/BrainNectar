@@ -18,7 +18,7 @@ module.exports = function() {
     var shopItems = [
         {
             name: "Brain Nectar Case of 6",
-            price: "10",
+            price: "10.00",
             image: {
                 src: "../../img/can.jpg",
                 alt: "Brain Nectar can"
@@ -27,7 +27,7 @@ module.exports = function() {
         },
         {
             name: "Shirt",
-            price: "15",
+            price: "15.00",
             image: {
                 src: "../../img/shirt.png",
                 alt: "Brain Nectar shirt"
@@ -36,7 +36,7 @@ module.exports = function() {
         },
         {
             name: "Mug",
-            price: "10",
+            price: "10.00",
             image: {
                 src: "../../img/mug.jpg",
                 alt: "Brain Nectar mug"
@@ -44,7 +44,7 @@ module.exports = function() {
             qtyInCart: 0
         }
     ];
-
+    
     function findShopItem(itemName) {
         shopItems.map(function(item) {
             if(item.name == itemName) {
@@ -52,7 +52,7 @@ module.exports = function() {
             }
         })
     }
-
+    
     return {
         getShopItems: function() {
             return shopItems;
@@ -67,6 +67,13 @@ module.exports = function() {
                 }
             });
             return items;
+        },
+        getCartSubtotal: function() {
+            var total = 0;
+            this.getItemsInCart().map(function(item) {
+                total += item.price * item.qtyInCart;
+            })
+            return total;
         },
         increaseQtyInCart: function(itemName) {
             shopItems.map(function(item) {

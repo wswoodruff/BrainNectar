@@ -4,51 +4,98 @@
         <span class="glyphicon glyphicon-lock"></span> Secure checkout with SSL
     </div>
     <br>
-    <div class="panel panel-default">
+    <div class="billingInfo panel panel-default">
         <div class="panel-heading">
             <h1 class="panel-title">Billing Info</h1>
         </div>
-        <div class="form-group">
-            <label for="billingFirstName">First Name<span style="color:red">*</span></label>
-            <input class="form-control" id="billingFirstName"/>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="billingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                <input class="form-control" id="billingFirstName"/>
 
-            <label for="billingLastName">Last Name<span style="color:red">*</span></label>
-            <input class="form-control" id="billingLastName"/>
+                <label for="billingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                <input class="form-control" id="billingLastName"/>
 
-            <label for="billingEmail">Email<span style="color:red">*</span></label>
-            <input type="email" class="form-control" id="billingEmail"/>
+                <label for="billingEmail">Email<span class="mandatoryAsterisk">*</span></label>
+                <input type="email" class="form-control" id="billingEmail"/>
 
-            <label for="billingConfirmEmail">Confirm Email<span style="color:red">*</span></label>
-            <input type="email" class="form-control" id="billingConfirmEmail"/>
+                <label for="billingConfirmEmail">Confirm Email<span class="mandatoryAsterisk">*</span></label>
+                <input type="email" class="form-control" id="billingConfirmEmail"/>
 
-            <label for="billingStreetAddress">Street Address<span style="color:red">*</span></label>
-            
-            <div class="input-group">
-            <span class="input-group-addon">Line 1:</span>
-            <input class="form-control" id="billingStreetAddressLine1">
+                <label for="billingStreetAddress">Street Address<span class="mandatoryAsterisk">*</span></label>
+                
+                <div class="input-group">
+                <span class="input-group-addon">Line 1:</span>
+                <input class="form-control" id="billingStreetAddressLine1">
+                </div>
+                
+                <div class="input-group">
+                <span class="input-group-addon">Line 2:</span>
+                <input class="form-control" id="billingStreetAddressLine2">
+                </div>
+                
+                <label for="billingCity">City<span class="mandatoryAsterisk">*</span></label>
+                <input class="form-control" id="billingCity"/>
+
+                <label for="billingState">State<span class="mandatoryAsterisk">*</span></label>
+                <input class="form-control" id="billingState"/>
+
+                <label for="billingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                <input class="form-control" id="billingZipCode"/>
             </div>
-            
-            <div class="input-group">
-            <span class="input-group-addon">Line 2:</span>
-            <input class="form-control" id="billingStreetAddressLine2">
+        </div>
+        <div class="panel-footer">
+            Form valid
+        </div>
+    </div>
+
+    <div class="shippingAddress panel panel-default">
+        <div class="panel-heading" ng-click="toggleShippingAddressCheckbox()">
+            <input class="shippingAddressCheckbox" type="checkbox">
+            <h1 class="panel-title">
+                Different Shipping Address
+            </h1>
+        </div>
+        <div ng-show="diffShippingAddress">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="shippingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingFirstName"/>
+
+                    <label for="shippingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingLastName"/>
+
+                    <label for="shippingStreetAddress">Street Address<span class="mandatoryAsterisk">*</span></label>
+                    
+                    <div class="input-group">
+                    <span class="input-group-addon">Line 1:</span>
+                    <input class="form-control" id="shippingStreetAddressLine1">
+                    </div>
+                    
+                    <div class="input-group">
+                    <span class="input-group-addon">Line 2:</span>
+                    <input class="form-control" id="shippingStreetAddressLine2">
+                    </div>
+                    
+                    <label for="shippingCity">City<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingCity"/>
+
+                    <label for="shippingState">State<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingState"/>
+
+                    <label for="shippingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingZipCode"/>
+                </div>
             </div>
-            
-            <label for="billingCity">City<span style="color:red">*</span></label>
-            <input class="form-control" id="billingCity"/>
-
-            <label for="billingState">State<span style="color:red">*</span></label>
-            <input class="form-control" id="billingState"/>
-
-            <label for="billingZipCode">Zip Code<span style="color:red">*</span></label>
-            <input class="form-control" id="billingZipCode"/>
-
-
+            <div class="panel-footer">
+                Form valid
+            </div>
         </div>
     </div>
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h1 class="panel-title">Review Your Order</h1>
+            <h1 class="panel-title">Order Summary</h1>
         </div>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="item in itemsInCart">
@@ -59,26 +106,32 @@
                         </a>
                     </div>
                     <div class="media-body">
-                            <ul class="list-group">
-                                <li class="item-title list-group-item">
-                                    {{item.name}}
-                                </li>
-                                <li class="list-group-item">
-                                    Price: ${{item.price}}
-                                </li>
-                                <li class="list-group-item">
-                                    Quantity: {{item.qtyInCart}}
-                                </li>
-                                <li class="list-group-item">
-                                    Subtotal: ${{item.price * item.qtyInCart}}.00
-                                </li>
-                            </ul>
+                        <ul class="list-group">
+                            <li class="item-title list-group-item">
+                                {{item.name}}
+                            </li>
+                            <li class="list-group-item">
+                                Price: {{item.price | currency}}
+                            </li>
+                            <li class="list-group-item">
+                                Quantity: {{item.qtyInCart}}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </li>
+            <li class="cart-total list-group-item">
+                Cart Subtotal: {{getCartSubtotal() | currency}}
+            </li>
+            <li class="list-group-item">
+                Tax: {{taxAmount | currency}}
+            </li>
+            <li class="list-group-item">
+                Shipping: {{shippingRate | currency}}
+            </li>
         </ul>
-        <div class="total-checkout-price panel-footer">
-            Item Total: ${{getTotalPrice()}}.00
+        <div class="grand-total total-checkout-price panel-footer">
+            Grand Total: {{getTotalPrice() + taxAmount + shippingRate | currency}}
         </div>
     </div>
 

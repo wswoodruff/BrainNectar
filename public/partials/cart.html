@@ -24,17 +24,17 @@
                                         {{item.name}}
                                     </li>
                                     <li class="list-group-item">
-                                        Price: ${{item.price}}
+                                        Price: {{item.price | currency}}
                                     </li>
                                     <li class="list-group-item">
                                         Quantity: {{item.qtyInCart}}
                                     </li>
-                                    <li class="list-group-item">
-                                        Subtotal: ${{item.price * item.qtyInCart}}.00
-                                    </li>
                                 </ul>
                         </div>
                     </div>
+                </li>
+                <li class="list-group-item cart-total">
+                    Cart Total: {{getCartSubtotal() | currency}}
                 </li>
             </ul>
         </div>
