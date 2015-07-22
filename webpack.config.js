@@ -65,9 +65,13 @@ config.module = {
             test: /\.scss$/,
             loader: "style-loader!css-loader!postcss-loader!sass?indentedSyntax",
             include: PATHS.sassFiles 
-        }
+        },
     ],
 
+    plugins: [
+        new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
+    ],
+    
     noParse: []
 }
 

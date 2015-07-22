@@ -1,18 +1,31 @@
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4" ng-repeat="shopItem in shopItems">
-            <div class="thumbnail">
-                <img src="{{shopItem.image.src}}" alt="{{shopItem.image.alt}}">
-                <div class="caption">
-                    {{shopItem.name}}
+<div class="shop">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="shopItem in shopItems">
+                <div class="thumbnail">
+                    <img src="{{shopItem.image.src}}" alt="{{shopItem.image.alt}}">
+                    <div class="caption">
+                        {{shopItem.name}}
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        <span class="input-group-addon">Add to <span class="glyphicon glyphicon-shopping-cart"></span>: </span>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                        </span>
+                        <input type="text" class="shopNumInCart" ng-model="">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </button>
+                        </span>
+                    </div>
                 </div>
-                <p>
-                    
-                </p>
             </div>
         </div>
     </div>
-</div>
 
-<button type="button" class="btn btn-primary" ui-sref="main.cart">View Cart</button>
+    <button type="button" class="btn btn-primary" ui-sref="main.cart">View Cart</button>
+</div>

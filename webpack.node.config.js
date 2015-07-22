@@ -69,6 +69,7 @@ config.module = {
     ],
     
     plugins: [
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         new ngAnnotatePlugin({
             add: true
         }),
@@ -76,8 +77,7 @@ config.module = {
             mangle: {
                 except: ['$super', '$', 'exports', 'require']
             }
-        }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        })
     ],
 
     noParse: []
@@ -100,4 +100,13 @@ config.addVendor("chance", PATHS.bowerRoot + "/chance/chance.js");
 config.addVendor("lodash", PATHS.bowerRoot + "/lodash/lodash.js");
 config.addVendor("ui-bootstrap", PATHS.bowerRoot + "/angular-bootstrap/ui-bootstrap.js");
 
+
+
+
+
 module.exports = config;
+
+
+
+
+
