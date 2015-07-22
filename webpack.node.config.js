@@ -1,6 +1,7 @@
 'use strict';
 var webpack = require('webpack');
 var path = require('path');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 // PATHS
 var PATHS = {  
@@ -26,15 +27,34 @@ var csswring     = require('csswring');
 
 config.module = {
     loaders: [
-        { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&minetype=application/font-woff" },
-        { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,  loader: "url?limit=10000&minetype=application/font-woff" },
-        { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=application/octet-stream" },
-        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file-loader" },
-        { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=image/svg+xml" },
+        {   test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   
+            loader: "url?limit=10000&minetype=application/font-woff",
+            include: PATHS.bootstrapFonts 
+        },
+        {   test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,  
+            loader: "url?limit=10000&minetype=application/font-woff",
+            include: PATHS.bootstrapFonts 
+        },
+        {   test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    
+            loader: "url?limit=10000&minetype=application/octet-stream",
+            include: PATHS.bootstrapFonts 
+        },
+        {   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    
+            loader: "file-loader",
+            include: PATHS.bootstrapFonts 
+        },
+        {   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    
+            loader: "url?limit=10000&minetype=image/svg+xml",
+            include: PATHS.bootstrapFonts 
+        },
         { 
             test: /\.scss$/,
-            loader: "style-loader!css-loader!postcss-loader!sass?indentedSyntax" 
+            loader: "style-loader!css-loader!postcss-loader!sass?indentedSyntax",
+            include: PATHS.sassFiles 
         }
+    ],
+    plugins: [
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
     ]
 }
 
