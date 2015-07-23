@@ -1,41 +1,61 @@
 var $ = require("jquery");
 
-module.exports = function($scope, ShopSrvc) {
+module.exports = function($scope, $timeout, ShopSrvc) {
     
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
+
+        $("#billingState").blur(function() {
+            calculateTaxAmount($scope.billing.state);
+        })
+
+        $("#shippingState").blur(function() {
+            calculateTaxAmount($scope.shipping.state);
+        })
     })
 
-    $scope.billingInfo = {};
+    $scope.billing = {};
 
-    $scope.shippingInfo = {};
+    $scope.shipping = {};
 
-    $scope.creditCardInfo = {};
-
+    $scope.creditCard = {
+        expMonth: "Month",
+        expYear: "Year"
+    };
+    
     $scope.itemsInCart = ShopSrvc.getItemsInCart();
 
     $scope.diffShippingAddress = false;
 
     $scope.cartTotal = ShopSrvc.getCartTotal();
-    calculateTaxAmount();
-    calculateShippingRate();
-    calculateGrandTotal();
+
+    $scope.taxAmount = 0;
+
+    $timeout(function() {
+        calculateShippingRate();
+        calculateGrandTotal();
+    })
     
+
     /*
         Call when relevant state is valid (billing or shipping)
         Need to know which state to see if sales tax applies for
         in-state purchases (let's just say we run out of CA).
     */
-    function calculateTaxAmount() {
+
+    function calculateTaxAmount(state) {
         var tax = 0;
         var CaliforniaTaxRate = ".075";
 
-        var livesInCalifornia = true;
-        if(livesInCalifornia) {
-            $scope.taxAmount = 5.95;
+        if(state == "CA") {
+            tax = 5.95;
         } else {
-            $scope.taxAmount = 0;
+            tax = 0;
         }
+
+        $scope.taxAmount = tax;
+
+        calculateGrandTotal();
     }
 
     // Call when relevant address is valid (billing or shipping)
@@ -48,6 +68,13 @@ module.exports = function($scope, ShopSrvc) {
         total += $scope.cartTotal;
         total += $scope.taxAmount;
         total += $scope.shippingRate;
-        $scope.grandTotal = total;
+
+        $scope.$apply(function() {
+            $scope.grandTotal = total;
+        })
+    }
+
+    $scope.submitPayment = function() {
+        // alert("payment submitted");
     }
 }

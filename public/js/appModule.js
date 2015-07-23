@@ -1,4 +1,4 @@
-module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap', 'ngAnimate'])
+module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ui.mask'])
 
 .run(function() {
     

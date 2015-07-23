@@ -113,6 +113,10 @@ html, body
         padding-left: 8px
 
 .checkout
+    #billingState, #shippingState
+        text-transform: uppercase
+        width: 50px
+
     .mandatoryAsterisk
         color: #dd0000
         font-size: 15px
@@ -151,7 +155,7 @@ html, body
                 font-size: 50px
                 top: 18px
         #securityCode
-            width: 90px
+            width: 80px
 
 footer
     font-size: 20px

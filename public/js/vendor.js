@@ -14,4 +14,5 @@ module.exports = function () {
     require("ui-bootstrap");
     require("lodash");
     require("ngAnimate");
+    require("ui-mask");
 }
