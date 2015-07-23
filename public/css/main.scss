@@ -1,6 +1,7 @@
 
 $navbar-height: 53px;
 $break-md-max: 768px;
+$sidebar-width: 280px;
 
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
@@ -28,6 +29,11 @@ html, body
     cursor: pointer
 
 
+input.ng-touched.ng-invalid
+    border-color: red
+    outline-color: red
+
+
 .mainView
     font-size: 20px
 
@@ -45,7 +51,7 @@ html, body
         color: $secondary-color
 
 .sidebar
-    width: 280px
+    width: $sidebar-width
     height: 100%
     float: left
     padding: 0 20px 20px 20px
@@ -69,6 +75,92 @@ html, body
 
 .page
     padding: 0 20px 30px 20px
+    margin-left: $sidebar-width
+
+.shop
+    .shopNumInCart
+        width: 100%
+        padding: 1.5px 2px
+        margin-left: -2px
+        text-align: center
+        border-top: solid 1px rgb(204, 204, 204)
+        border-bottom: solid 1px rgb(204, 204, 204)
+    .price
+        font-weight: bold
+
+.cart, .checkout
+    .media-object
+        width: 100px
+    .panel-title
+        font-size: 20px
+    .media
+        .item-title
+            background-color: #eee
+    .cart-total
+        text-align: right
+        font-weight: bold
+
+.cart
+    .btn-block
+        .checkout-text
+            font-size: 22px
+        .circle-arrow-icon
+            font-size: 22px
+    .checkout-btn-right-arrow
+        font-size: 20px
+
+    .checkout-btn-right-arrow.second-right-arrow
+        margin-left: -12px
+        margin-right: -5px
+
+    .circle-arrow-icon
+        font-size: 20px
+        padding-left: 8px
+
+.checkout
+    #billingState, #shippingState
+        text-transform: uppercase
+        width: 50px
+
+    .mandatoryAsterisk
+        color: #dd0000
+        font-size: 15px
+    .shippingAddress
+        .panel-heading
+            cursor: pointer
+        .panel-title
+            display: inline-block
+        .shippingAddressCheckbox
+            cursor: pointer
+        .glyphicon-unchecked
+            color: #777
+        .glyphicon-check
+            color: #00922C
+
+    .checkout-with-credit-card
+        .ssl-block
+            float: right
+            padding: 6px 5px 5px 8px
+            border-radius: 4px
+            background-color: rgba(141, 198, 82, .3);
+            margin-top: -10px
+            .glyphicon-lock
+                color: #84B94D
+    .grand-total
+        font-weight: bold
+        text-align: right
+
+    .payment-options
+        .checkout-with-paypal
+            width: 100%
+            cursor: pointer
+            img
+                width: 50%
+            .glyphicon
+                font-size: 50px
+                top: 18px
+        #securityCode
+            width: 80px
 
 footer
     font-size: 20px
@@ -82,6 +174,8 @@ footer
         .sales-card
             
     
+
+
 
 
 

@@ -1,6 +1,14 @@
-module.exports = function($scope) {
+module.exports = function($scope, ShopSrvc) {
+    
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        console.log("cart loaded");
     })
+
+    var shopItems = ShopSrvc.getShopItems();
+
+    var itemsInCart = ShopSrvc.getItemsInCart();
+    $scope.itemsInCart = itemsInCart;
+    $scope.getCartTotal = function() {
+        return ShopSrvc.getCartTotal();
+    }
 }

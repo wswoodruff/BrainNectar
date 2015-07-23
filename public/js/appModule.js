@@ -1,4 +1,4 @@
-module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap'])
+module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ui.mask'])
 
 .run(function() {
     
@@ -52,6 +52,12 @@ $stateProvider
         url:'/cart',
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
+    })
+
+    .state('main.checkout', {
+        url:'/checkout',
+        templateUrl: 'partials/checkout.html',
+        controller: 'CheckoutCtrl'
     })
     
     // if none of the above states are matched, use this as the fallback

@@ -1,1 +1,47 @@
-See what stuff you bought!
+<div class="cart">
+    <h1>Cart</h1>
+    <div ng-if="itemsInCart.length === 0" class="noCartItems">
+        Cart is empty
+        <br>
+    </div>
+
+    <div ng-if="itemsInCart.length > 0" class="cartItems">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">Cart</h1>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in itemsInCart">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a>
+                                <img class="media-object" src="{{item.image.src}}" alt="{{item.image.alt}}"/>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                                <ul class="list-group">
+                                    <li class="item-title list-group-item">
+                                        {{item.name}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: {{item.price | currency}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        Quantity: {{item.qtyInCart}}
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item cart-total">
+                    Cart Total: {{getCartTotal() | currency}}
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-success btn-lg btn-block" ui-sref="main.checkout"><span class="checkout-text">Continue to Checkout</span><span class="circle-arrow-icon glyphicon glyphicon-circle-arrow-right"></span></button>
+
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg" ui-sref="main.shop"><span class="glyphicon glyphicon-arrow-left"></span> Back to Shop</button>
+</div>
+

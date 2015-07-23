@@ -1,4 +1,9 @@
 module.exports = angular.module('app.services', [])
 
-.factory('SalesFeed', require('./salesFeed'))
+.factory('ResizeSrvc', require('./resizeSrvc'))
 
+.factory('SalesFeedSrvc', require('./salesFeedSrvc'))
+
+.factory('ShopSrvc', require('./shopSrvc'))
+
+.factory('CartSrvc', require('./cartSrvc'))

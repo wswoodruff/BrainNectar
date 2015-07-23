@@ -13,5 +13,3 @@ angular.element(document).ready(function () {
   });
 });
 
-
-main.init();
