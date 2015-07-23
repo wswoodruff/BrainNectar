@@ -49,7 +49,7 @@
     </div>
 
     <div class="shippingAddress panel panel-default">
-        <div class="panel-heading" ng-click="diffShippingAddress = !diffShippingAddress">
+        <div class="panel-heading" ng-click="toggleDiffShippingAddress()">
             <span ng-if="!diffShippingAddress" class="glyphicon glyphicon-unchecked"></span>
             <span ng-if="diffShippingAddress" class="glyphicon glyphicon-check"></span>
             <h1 class="panel-title">
@@ -163,19 +163,19 @@
                     <div class="ssl-block">
                         <span class="glyphicon glyphicon-lock"></span> Secure checkout with SSL
                     </div>
-                    <form novalidate>
+                    <form name="credit-card-form" novalidate>
                         <div class="form-group">
                             <label for="creditCarNumber">Card Number<span class="mandatoryAsterisk">*</span></label>
-                            <input class="form-control" id="creditCarNumber" ng-model="creditCard.number" ui-mask="9999 9999 9999 9999" ng-required="checkout-with-card"/>
+                            <input class="form-control" name="creditCardNumber" id="creditCarNumber" ng-model="creditCard.number" ui-mask="9999 9999 9999 9999"/>
 
                             <label for="nameOnCreditCard">Name on Card<span class="mandatoryAsterisk">*</span></label>
-                            <input class="form-control" id="nameOnCreditCard" ng-model="creditCard.name" ng-required="checkout-with-card"/>
+                            <input class="form-control" name="nameOnCreditCard" id="nameOnCreditCard" ng-model="creditCard.name" ng-required="creditCard.number.length == 16"/>
 
                             <label for="expirationDate">Expiration Date<span class="mandatoryAsterisk">*</span></label>
                             <div id="expirationDate container-fluid">
                                 <div class="row">
                                     <div class=" col-xs-4">
-                                        <select class="form-control" ng-model="creditCard.expMonth" ng-required="checkout-with-card">
+                                        <select class="form-control" ng-model="creditCard.expMonth" name="expMonth" ng-required="creditCard.number.length == 16">
                                             <option value="Month">Month</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -192,7 +192,7 @@
                                         </select>
                                     </div>
                                     <div class=" col-xs-4">
-                                        <select class="form-control" ng-model="creditCard.expYear" ng-required="checkout-with-card">
+                                        <select class="form-control" ng-model="creditCard.expYear" name="expYear" ng-required="creditCard.number.length == 16">
                                             <option value="Year">Year</option>
                                             <option value="13">2013</option>
                                             <option value="14">2014</option>
@@ -210,10 +210,10 @@
                                 </div>
                             </div>
                             <label for="securityCode">3 Digit Security Code<span class="mandatoryAsterisk">*</span></label>
-                            <input class="form-control" id="securityCode" ng-model="creditCard.securityCode" ui-mask="999" ng-required="checkout-with-card"/>
+                            <input class="form-control" name="securityCode" id="securityCode" ng-model="creditCard.securityCode" ui-mask="999" ng-required="creditCard.number.length == 16"/>
                         </div>
                     </form>
-                    <button class="btn btn-lg btn-block btn-success" ng-click="submitPayment()">
+                    <button class="btn btn-lg btn-block btn-success" name="submitButton" ng-click="submitPayment()" ng-disabled="" ng-class="{'disabled': credit-card-form.$invalid}">
                         Submit Payment
                     </button>
                 </div>

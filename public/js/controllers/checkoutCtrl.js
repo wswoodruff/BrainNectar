@@ -6,7 +6,9 @@ module.exports = function($scope, $timeout, ShopSrvc) {
         event.stopPropagation();
 
         $("#billingState").blur(function() {
-            calculateTaxAmount($scope.billing.state);
+            if(!$scope.diffShippingAddress) {
+                calculateTaxAmount($scope.billing.state);
+            }
         })
 
         $("#shippingState").blur(function() {
@@ -22,10 +24,19 @@ module.exports = function($scope, $timeout, ShopSrvc) {
         expMonth: "Month",
         expYear: "Year"
     };
-    
+
     $scope.itemsInCart = ShopSrvc.getItemsInCart();
 
     $scope.diffShippingAddress = false;
+
+    $scope.toggleDiffShippingAddress = function() {
+        $scope.diffShippingAddress = !$scope.diffShippingAddress;
+        if(!$scope.diffShippingAddress) {
+            calculateTaxAmount($scope.billing.state);
+        } else {
+            calculateTaxAmount($scope.shipping.state);
+        }
+    }
 
     $scope.cartTotal = ShopSrvc.getCartTotal();
 
@@ -45,14 +56,14 @@ module.exports = function($scope, $timeout, ShopSrvc) {
 
     function calculateTaxAmount(state) {
         var tax = 0;
-        var CaliforniaTaxRate = ".075";
+        var californiaTaxRate = ".075";
 
         if(state == "CA") {
-            tax = 5.95;
+            tax = $scope.cartTotal * californiaTaxRate;
         } else {
             tax = 0;
         }
-
+        
         $scope.taxAmount = tax;
 
         calculateGrandTotal();
