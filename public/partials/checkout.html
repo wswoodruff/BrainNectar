@@ -1,48 +1,47 @@
+
 <div class="checkout">
     <h1>Checkout</h1>
-    <div class="ssl-block">
-        <span class="glyphicon glyphicon-lock"></span> Secure checkout with SSL
-    </div>
     <br>
     <div class="billingInfo panel panel-default">
         <div class="panel-heading">
             <h1 class="panel-title">Billing Info</h1>
         </div>
         <div class="panel-body">
-            <div class="form-group">
-                <label for="billingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
-                <input class="form-control" id="billingFirstName"/>
+            <form novalidate>
+                <div class="form-group">
+                    <label for="billingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                    <input type="text" class="form-control" id="billingFirstName"/>
 
-                <label for="billingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
-                <input class="form-control" id="billingLastName"/>
+                    <label for="billingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                    <input type="text" class="form-control" id="billingLastName"/>
 
-                <label for="billingEmail">Email<span class="mandatoryAsterisk">*</span></label>
-                <input type="email" class="form-control" id="billingEmail"/>
+                    <label for="billingEmail">Email<span class="mandatoryAsterisk">*</span></label>
+                    <input type="email" class="form-control" id="billingEmail"/>
 
-                <label for="billingConfirmEmail">Confirm Email<span class="mandatoryAsterisk">*</span></label>
-                <input type="email" class="form-control" id="billingConfirmEmail"/>
+                    <label for="billingConfirmEmail">Confirm Email<span class="mandatoryAsterisk">*</span></label>
+                    <input type="email" class="form-control" id="billingConfirmEmail"/>
 
-                <label for="billingStreetAddress">Street Address<span class="mandatoryAsterisk">*</span></label>
-                
-                <div class="input-group">
-                <span class="input-group-addon">Line 1:</span>
-                <input class="form-control" id="billingStreetAddressLine1">
+                    <label for="billingAddress">Address<span class="mandatoryAsterisk">*</span></label>
+                    <div class="input-group" id="billingAddress">
+                        <span class="input-group-addon">Line 1:</span>
+                        <input class="form-control" id="billingAddressLine1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon">Line 2:</span>
+                        <input class="form-control" id="billingAddressLine2">
+                    </div>
+                    
+                    <label for="billingCity">City<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="billingCity"/>
+
+                    <label for="billingState">State<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="billingState"/>
+
+                    <label for="billingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="billingZipCode"/>
                 </div>
-                
-                <div class="input-group">
-                <span class="input-group-addon">Line 2:</span>
-                <input class="form-control" id="billingStreetAddressLine2">
-                </div>
-                
-                <label for="billingCity">City<span class="mandatoryAsterisk">*</span></label>
-                <input class="form-control" id="billingCity"/>
-
-                <label for="billingState">State<span class="mandatoryAsterisk">*</span></label>
-                <input class="form-control" id="billingState"/>
-
-                <label for="billingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
-                <input class="form-control" id="billingZipCode"/>
-            </div>
+            </form>
         </div>
         <div class="panel-footer">
             Form valid
@@ -50,42 +49,45 @@
     </div>
 
     <div class="shippingAddress panel panel-default">
-        <div class="panel-heading" ng-click="toggleShippingAddressCheckbox()">
-            <input class="shippingAddressCheckbox" type="checkbox">
+        <div class="panel-heading" ng-click="diffShippingAddress = !diffShippingAddress">
+            <span ng-if="!diffShippingAddress" class="glyphicon glyphicon-unchecked"></span>
+            <span ng-if="diffShippingAddress" class="glyphicon glyphicon-check"></span>
             <h1 class="panel-title">
                 Different Shipping Address
             </h1>
         </div>
         <div ng-show="diffShippingAddress">
             <div class="panel-body">
-                <div class="form-group">
-                    <label for="shippingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
-                    <input class="form-control" id="shippingFirstName"/>
+                <form novalidate>
+                    <div class="form-group">
+                        <label for="shippingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                        <input class="form-control" id="shippingFirstName"/>
 
-                    <label for="shippingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
-                    <input class="form-control" id="shippingLastName"/>
+                        <label for="shippingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                        <input class="form-control" id="shippingLastName"/>
 
-                    <label for="shippingStreetAddress">Street Address<span class="mandatoryAsterisk">*</span></label>
-                    
-                    <div class="input-group">
-                    <span class="input-group-addon">Line 1:</span>
-                    <input class="form-control" id="shippingStreetAddressLine1">
+                        <label for="shippingAddress">Address<span class="mandatoryAsterisk">*</span></label>
+                        
+                        <div class="input-group" id="shippingAddress">
+                            <span class="input-group-addon">Line 1:</span>
+                            <input class="form-control" id="shippingAddressLine1">
+                        </div>
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">Line 2:</span>
+                            <input class="form-control" id="shippingAddressLine2">
+                        </div>
+                        
+                        <label for="shippingCity">City<span class="mandatoryAsterisk">*</span></label>
+                        <input class="form-control" id="shippingCity"/>
+
+                        <label for="shippingState">State<span class="mandatoryAsterisk">*</span></label>
+                        <input class="form-control" id="shippingState"/>
+
+                        <label for="shippingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                        <input class="form-control" id="shippingZipCode"/>
                     </div>
-                    
-                    <div class="input-group">
-                    <span class="input-group-addon">Line 2:</span>
-                    <input class="form-control" id="shippingStreetAddressLine2">
-                    </div>
-                    
-                    <label for="shippingCity">City<span class="mandatoryAsterisk">*</span></label>
-                    <input class="form-control" id="shippingCity"/>
-
-                    <label for="shippingState">State<span class="mandatoryAsterisk">*</span></label>
-                    <input class="form-control" id="shippingState"/>
-
-                    <label for="shippingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
-                    <input class="form-control" id="shippingZipCode"/>
-                </div>
+                </form>
             </div>
             <div class="panel-footer">
                 Form valid
@@ -121,7 +123,7 @@
                 </div>
             </li>
             <li class="cart-total list-group-item">
-                Cart Subtotal: {{getCartSubtotal() | currency}}
+                Cart Subtotal: {{cartTotal | currency}}
             </li>
             <li class="list-group-item">
                 Tax: {{taxAmount | currency}}
@@ -131,9 +133,88 @@
             </li>
         </ul>
         <div class="grand-total total-checkout-price panel-footer">
-            Grand Total: {{getTotalPrice() + taxAmount + shippingRate | currency}}
+            Grand Total: {{grandTotal | currency}}
         </div>
     </div>
 
+    <div class="payment-options panel panel-success">
+        <div class="panel-heading">
+            <h1 class="panel-title">Payment Options</h1>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Paypal</h1>
+                </div>
+                <div class="checkout-with-paypal panel-body">
+                    <div>
+                        <img src="../img/checkout-with-paypal.jpg"/><span class="glyphicon glyphicon-arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-with-credit-card panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Credit Card</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="ssl-block">
+                        <span class="glyphicon glyphicon-lock"></span> Secure checkout with SSL
+                    </div>
+                    <form novalidate>
+                        <div class="form-group">
+                            <label for="nameOnCreditCard">Card Number<span class="mandatoryAsterisk">*</span></label>
+                            <input class="form-control" id="creditCarNumber"/>
 
+                            <label for="nameOnCreditCard">Name on Card<span class="mandatoryAsterisk">*</span></label>
+                            <input class="form-control" id="creditCarNumber"/>
+
+                            <label for="expirationDate">Expiration Date<span class="mandatoryAsterisk">*</span></label>
+                            <div id="expirationDate container-fluid">
+                                <div class="row">
+                                    <div class=" col-xs-4">
+                                        <select class="form-control">
+                                            <option value="Month">Month</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class=" col-xs-4">
+                                        <select class="form-control">
+                                            <option value="Year">Year</option>
+                                            <option value="13">2013</option>
+                                            <option value="14">2014</option>
+                                            <option value="15">2015</option>
+                                            <option value="16">2016</option>
+                                            <option value="17">2017</option>
+                                            <option value="18">2018</option>
+                                            <option value="19">2019</option>
+                                            <option value="20">2020</option>
+                                            <option value="21">2021</option>
+                                            <option value="22">2022</option>
+                                            <option value="23">2023</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="securityCode">3 Digit Security Code<span class="mandatoryAsterisk">*</span></label>
+                            <input class="form-control" id="securityCode"/>
+                        </div>
+                    </form>
+                    <button class="btn btn-lg btn-block btn-success">
+                        Submit Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

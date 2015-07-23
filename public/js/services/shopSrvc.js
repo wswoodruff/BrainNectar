@@ -68,7 +68,7 @@ module.exports = function() {
             });
             return items;
         },
-        getCartSubtotal: function() {
+        getCartTotal: function() {
             var total = 0;
             this.getItemsInCart().map(function(item) {
                 total += item.price * item.qtyInCart;

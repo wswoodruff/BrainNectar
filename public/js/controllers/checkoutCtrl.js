@@ -2,33 +2,52 @@ var $ = require("jquery");
 
 module.exports = function($scope, ShopSrvc) {
     
-    var itemsInCart = ShopSrvc.getItemsInCart();
-    $scope.itemsInCart = itemsInCart;
-    
-    $scope.getTotalPrice = function() {
-        var total = 0;
-        itemsInCart.map(function(item) {
-            total += item.price * item.qtyInCart;
-        })
-        return total;
-    }
-    
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
     })
 
+    $scope.billingInfo = {};
+
+    $scope.shippingInfo = {};
+
+    $scope.creditCardInfo = {};
+
+    $scope.itemsInCart = ShopSrvc.getItemsInCart();
+
     $scope.diffShippingAddress = false;
 
-    $scope.toggleShippingAddressCheckbox = function() {
-        var checkbox = $(".shippingAddressCheckbox")[0];
-        checkbox.checked = !checkbox.checked;
-        $scope.diffShippingAddress = !$scope.diffShippingAddress;
-    }
+    $scope.cartTotal = ShopSrvc.getCartTotal();
+    calculateTaxAmount();
+    calculateShippingRate();
+    calculateGrandTotal();
     
-    $scope.taxAmount = 5.95
-    $scope.shippingRate = 15;
+    /*
+        Call when relevant state is valid (billing or shipping)
+        Need to know which state to see if sales tax applies for
+        in-state purchases (let's just say we run out of CA).
+    */
+    function calculateTaxAmount() {
+        var tax = 0;
+        var CaliforniaTaxRate = ".075";
 
-    $scope.getCartSubtotal = function() {
-        return ShopSrvc.getCartSubtotal();
+        var livesInCalifornia = true;
+        if(livesInCalifornia) {
+            $scope.taxAmount = 5.95;
+        } else {
+            $scope.taxAmount = 0;
+        }
+    }
+
+    // Call when relevant address is valid (billing or shipping)
+    function calculateShippingRate() {
+        $scope.shippingRate = 15;
+    }
+
+    function calculateGrandTotal() {
+        var total = 0;
+        total += $scope.cartTotal;
+        total += $scope.taxAmount;
+        total += $scope.shippingRate;
+        $scope.grandTotal = total;
     }
 }

@@ -73,6 +73,11 @@ module.exports = function() {
                 console.log("ERROR: Mobile callback already registered!");
             } else {
                 mobileCallbacks.push(callback);
+                if($(window).width() <= mobileBreakpoint) {
+                    callback(true);
+                } else {
+                    callback(false);
+                }
             }
         },
         removeMobileCallback: function(callback) {

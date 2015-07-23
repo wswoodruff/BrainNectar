@@ -123,14 +123,35 @@ html, body
             display: inline-block
         .shippingAddressCheckbox
             cursor: pointer
-    .ssl-block
-        padding: 6px 5px 5px 8px
-        background-color: rgba(141, 198, 82, .3);
-        .glyphicon-lock
-            color: #84B94D
+        .glyphicon-unchecked
+            color: #777
+        .glyphicon-check
+            color: #00922C
+
+    .checkout-with-credit-card
+        .ssl-block
+            float: right
+            padding: 6px 5px 5px 8px
+            border-radius: 4px
+            background-color: rgba(141, 198, 82, .3);
+            margin-top: -10px
+            .glyphicon-lock
+                color: #84B94D
     .grand-total
         font-weight: bold
         text-align: right
+
+    .payment-options
+        .checkout-with-paypal
+            width: 100%
+            cursor: pointer
+            img
+                width: 50%
+            .glyphicon
+                font-size: 50px
+                top: 18px
+        #securityCode
+            width: 90px
 
 footer
     font-size: 20px
