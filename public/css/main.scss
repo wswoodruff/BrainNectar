@@ -29,6 +29,11 @@ html, body
     cursor: pointer
 
 
+input.ng-touched.ng-invalid
+    border-color: red
+    outline-color: red
+
+
 .mainView
     font-size: 20px
 
