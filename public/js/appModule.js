@@ -1,3 +1,5 @@
+
+
 module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ui.mask'])
 
 .run(function() {
@@ -35,29 +37,27 @@ $stateProvider
             }
         }
     })
-
-    
     
     .state('main.home', {
-        url: '/home',
+        url: 'home',
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
     })
 
     .state('main.shop', {
-        url:'/shop',
+        url:'shop',
         templateUrl: 'partials/shop.html',
         controller: 'ShopCtrl'
     })
 
     .state('main.cart', {
-        url:'/cart',
+        url:'cart',
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
     })
-
+    
     .state('main.checkout', {
-        url:'/checkout',
+        url:'checkout',
         templateUrl: 'partials/checkout.html',
         controller: 'CheckoutCtrl'
     })
