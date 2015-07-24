@@ -57,11 +57,27 @@ $stateProvider
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
     })
-
+    
     .state('main.checkout', {
         url:'checkout',
-        templateUrl: 'partials/checkout.html',
-        controller: 'CheckoutCtrl'
+        views: {
+            '': {
+                templateUrl: 'partials/checkout.html',
+                controller: 'CheckoutCtrl',
+            },
+            'billing@main.checkout': {
+                templateUrl: 'partials/checkout/checkout.billing.html',
+            },
+            'shipping@main.checkout': {
+                templateUrl: 'partials/checkout/checkout.shipping.html',
+            },
+            'orderSummary@main.checkout': {
+                templateUrl: 'partials/checkout/checkout.orderSummary.html',
+            },
+            'paymentOptions@main.checkout': {
+                templateUrl: 'partials/checkout/checkout.paymentOptions.html',
+            }
+        }
     })
     
     // if none of the above states are matched, use this as the fallback

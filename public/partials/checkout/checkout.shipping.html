@@ -1,0 +1,49 @@
+<div class="shippingAddress panel panel-default">
+    <div class="panel-heading" ng-click="toggleDiffShippingAddress()">
+        <span ng-if="!diffShippingAddress" class="glyphicon glyphicon-unchecked"></span>
+        <span ng-if="diffShippingAddress" class="glyphicon glyphicon-check"></span>
+        <h1 class="panel-title">
+            Different Shipping Address
+        </h1>
+    </div>
+    <div ng-show="diffShippingAddress">
+        <div class="panel-body">
+            <form novalidate>
+                <div class="form-group">
+                    <label for="shippingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                    <input type="text" class="form-control" id="shippingFirstName" ng-model="shipping.firstName" ng-required="diffShippingAddress"/>
+
+                    <label for="shippingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingLastName" ng-model="shipping.lastName" ng-required="diffShippingAddress"/>
+
+                    <label for="shippingPhoneNumber">Phone<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingPhoneNumber" ng-model="shipping.phone" ui-mask="(999) 999-9999" ng-required="diffShippingAddress"/>
+
+                    <label for="shippingAddress">Address<span class="mandatoryAsterisk">*</span></label>
+                    
+                    <div class="input-group" id="shippingAddress">
+                        <span class="input-group-addon">Line 1:</span>
+                        <input class="form-control" id="shippingAddressLine1" ng-model="shipping.addressLine1" ng-required="diffShippingAddress"/>
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon">Line 2:</span>
+                        <input class="form-control" id="shippingAddressLine2" ng-model="shipping.addressLine2"/>
+                    </div>
+                    
+                    <label for="shippingCity">City<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingCity" ng-model="shipping.city" ng-required="diffShippingAddress"/>
+
+                    <label for="shippingState">State<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingState" ng-model="shipping.state" ui-mask="AA" ng-required="diffShippingAddress"/>
+
+                    <label for="shippingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                    <input class="form-control" id="shippingZipCode" ng-model="shipping.zipCode" ui-mask="99999" ng-required="diffShippingAddress"/>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            
+        </div>
+    </div>
+</div>

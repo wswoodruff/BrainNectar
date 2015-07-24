@@ -1,0 +1,45 @@
+<div class="billingInfo panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">Billing Info</h1>
+    </div>
+    <div class="panel-body">
+        <form novalidate>
+            <div class="form-group">
+                <label for="billingFirstName">First Name<span class="mandatoryAsterisk">*</span></label>
+                <input type="text" class="form-control" id="billingFirstName" ng-model="billing.firstName" required/>
+
+                <label for="billingLastName">Last Name<span class="mandatoryAsterisk">*</span></label>
+                <input type="text" class="form-control" id="billingLastName" ng-model="billing.lastName" required/>
+
+                <label for="billingEmail">Email<span class="mandatoryAsterisk">*</span></label>
+                <input type="email" class="form-control" id="billingEmail" ng-model="billing.email" required/>
+
+                <label for="billingPhoneNumber">Phone</label>
+                <input type="text" class="form-control" id="billingPhoneNumber" ng-model="billing.phone" ui-mask="(999) 999-9999"/>
+
+                <label for="billingAddress">Address<span class="mandatoryAsterisk">*</span></label>
+                <div class="input-group" id="billingAddress">
+                    <span class="input-group-addon">Line 1:</span>
+                    <input type="text" class="form-control" id="billingAddressLine1" ng-model="billing.addessLine1" required/>
+                </div>
+                
+                <div class="input-group">
+                    <span class="input-group-addon">Line 2:</span>
+                    <input type="text" class="form-control" id="billingAddressLine2" ng-model="billing.addessLine2"/>
+                </div>
+                
+                <label for="billingCity">City<span class="mandatoryAsterisk">*</span></label>
+                <input type="text" class="form-control" id="billingCity" ng-model="billing.city" required/>
+
+                <label for="billingState">State<span class="mandatoryAsterisk">*</span></label>
+                <input type="text" class="form-control" id="billingState" ng-model="billing.state" ui-mask="AA" required/>
+
+                <label for="billingZipCode">Zip Code<span class="mandatoryAsterisk">*</span></label>
+                <input type="text" class="form-control" id="billingZipCode" ng-model="billing.zipCode" ui-mask="99999" required/>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        
+    </div>
+</div>
