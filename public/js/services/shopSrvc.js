@@ -1,16 +1,8 @@
 /*
-    Rule of simplicity and seperation of concerns:
-    This module breaks it, but just a tiny bit.
+    This module holds items featured in the shop, (should be grabbed
+    from db), and keeps track of their quantities in the cart.
     
-    I might be breaking it in other places but I got rid of a service to
-    consolidate it with this one, since it was overkill to have a service
-    just to keep track of one integer (qtyInCart) per shop item.
-    
-    This module holds the items in the shop and holds a function to return
-    the number of items in the cart.
-    
-    Seperation of concerns is probably something I could use some work on.
-    I'd appreciate any *pointers. Hah. Ha... Yeeah.
+    TODO: Use ngStorage to persist the cart across browser tabs and refreshes
 */
 
 module.exports = function() {
@@ -44,14 +36,6 @@ module.exports = function() {
             qtyInCart: 0
         }
     ];
-    
-    function findShopItem(itemName) {
-        shopItems.map(function(item) {
-            if(item.name == itemName) {
-                return item;
-            }
-        })
-    }
     
     return {
         getShopItems: function() {

@@ -1,3 +1,7 @@
+/*
+    Just contains code for the chart on the homepage.
+*/
+
 var Chart = require("Chart.js");
 
 module.exports = function($scope, ResizeSrvc) {
@@ -75,12 +79,4 @@ module.exports = function($scope, ResizeSrvc) {
 
         var myLineChart = new Chart(ctx).Line(data, options);
     })
-
-    
-
-    ResizeSrvc.addResizeCallback(function() {
-
-    })
-
-    
 }

@@ -1,6 +1,5 @@
 /*
-    This module assumes that there will be at least
-    one thing being sold in the shop
+    Handles the + and - buttons in the cart.
 */
 
 module.exports = function($scope, $state, ShopSrvc) {
@@ -10,10 +9,8 @@ module.exports = function($scope, $state, ShopSrvc) {
     })
     
     $scope.numInCart = 0;
-    
-    var shopItems = ShopSrvc.getShopItems();
 
-    $scope.shopItems = shopItems;
+    $scope.shopItems = ShopSrvc.getShopItems();
 
     $scope.increaseInCart = function(itemName) {
         ShopSrvc.increaseQtyInCart(itemName);

@@ -1,3 +1,6 @@
+/*
+    Keeps all controllers in their own modules
+*/
 
 module.exports = angular.module('app.controllers', [])
 

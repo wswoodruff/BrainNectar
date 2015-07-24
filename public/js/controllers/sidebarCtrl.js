@@ -1,18 +1,17 @@
 /*
-    These shorthand requires are defined in webpack.config.js
+    Holds the sales feed and registers a callback to be called when the
+    server pushes down new info.
 */
 
 var moment = require('moment');
 var $ = require('jquery');
 
-module.exports = function($scope, SalesFeedSrvc) {
+module.exports = function($scope, SalesFeedSrvc, ResizeSrvc, $timeout) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
-        if($(window).width() <= 768) {
-            $scope.mobileWidth = true;
-        }
     })
 
+    // initialize numSales
     $scope.numSales = 0;
     
     function applySalesFromServer(data, numSales) {
@@ -27,15 +26,20 @@ module.exports = function($scope, SalesFeedSrvc) {
     
     SalesFeedSrvc.getDataAndBindCallbackForServerPush(applySalesFromServer);
 
-    $(window).resize(function() {
-        if($(window).width() <= 768) {
-            $scope.$apply(function() {
-                $scope.mobileWidth = true;
+    // Registering this automatically calls it
+    ResizeSrvc.addMobileCallback(function(isMobileWidth) {
+        if(isMobileWidth) {
+            $timeout(function() {
+                $scope.$apply(function() {
+                    $scope.mobileWidth = true;
+                })
             })
         } else {
-            $scope.$apply(function() {
-                $scope.mobileWidth = false;
+            $timeout(function() {
+                $scope.$apply(function() {
+                    $scope.mobileWidth = false;
+                })
             })
         }
-    })
+    });
 }

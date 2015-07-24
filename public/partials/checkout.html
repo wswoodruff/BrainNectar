@@ -47,7 +47,7 @@
             
         </div>
     </div>
-
+    
     <div class="shippingAddress panel panel-default">
         <div class="panel-heading" ng-click="toggleDiffShippingAddress()">
             <span ng-if="!diffShippingAddress" class="glyphicon glyphicon-unchecked"></span>
@@ -213,8 +213,8 @@
                             <input class="form-control" name="securityCode" id="securityCode" ng-model="creditCard.securityCode" ui-mask="999" ng-required="creditCard.number.length == 16"/>
                         </div>
                     </form>
-                    <button class="btn btn-lg btn-block btn-success" name="submitButton" ng-click="submitPayment()" ng-disabled="" ng-class="{'disabled': credit-card-form.$invalid}">
-                        Submit Payment
+                    <button class="btn btn-lg btn-block btn-success" name="submitButton" ng-click="submitCCPayment()" ng-disabled="" ng-class="{'disabled': credit-card-form.$invalid}">
+                        <strong>Submit Payment</strong>
                     </button>
                 </div>
             </div>

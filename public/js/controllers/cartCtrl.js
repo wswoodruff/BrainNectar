@@ -1,3 +1,7 @@
+/*
+    Exposes cart items and cart total from the ShopSrvc
+*/
+
 module.exports = function($scope, ShopSrvc) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();

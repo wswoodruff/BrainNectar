@@ -1,4 +1,6 @@
-
+/*
+    
+*/
 
 module.exports = angular.module('brainNectar', ['app.controllers', 'app.services', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ui.mask'])
 
@@ -55,7 +57,7 @@ $stateProvider
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
     })
-    
+
     .state('main.checkout', {
         url:'checkout',
         templateUrl: 'partials/checkout.html',
