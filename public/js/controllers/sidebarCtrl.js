@@ -1,6 +1,7 @@
 /*
     These shorthand requires are defined in webpack.config.js
 */
+
 var moment = require('moment');
 var $ = require('jquery');
 
@@ -11,13 +12,16 @@ module.exports = function($scope, SalesFeedSrvc) {
             $scope.mobileWidth = true;
         }
     })
+
+    $scope.numSales = 0;
     
-    function applySalesFromServer(data) {
+    function applySalesFromServer(data, numSales) {
         data.map(function(purchase, index) {
             purchase.relativeTime = moment(purchase.time).fromNow();
         })
         $scope.$apply(function() {
             $scope.salesArray = data;
+            $scope.numSales = numSales;
         })
     }
     

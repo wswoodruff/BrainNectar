@@ -19,6 +19,7 @@ module.exports = function() {
     var mobileBreakpoint = 768;
 
     var mobileCallbacks = [];
+    var resizeCallbacks = [];
 
     // must have init value, gets overriden if necessary by setMobileWidth();
     var isMobileWidth = false;
@@ -62,11 +63,17 @@ module.exports = function() {
 
     $(window).resize(function() {
         setMobileWidth();
+        resizeCallbacks.map(function(callback) {
+            callback();
+        })
     })
     
     return {
         isMobileWidth: function() {
             return isMobileWidth;
+        },
+        addResizeCallback: function(callback) {
+            resizeCallbacks.push(callback);
         },
         addMobileCallback: function(callback) {
             if(findMobileCallback(callback)) {

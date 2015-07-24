@@ -101,8 +101,7 @@ config.addVendor("lodash", PATHS.bowerRoot + "/lodash/lodash.js");
 config.addVendor("ui-bootstrap", PATHS.bowerRoot + "/angular-bootstrap/ui-bootstrap.js");
 config.addVendor("ngAnimate", PATHS.bowerRoot + "/angular-animate/angular-animate.js");
 config.addVendor("ui-mask", PATHS.bowerRoot + "/angular-ui-mask/dist/mask.js");
-
-
+config.addVendor("Chart.js", PATHS.bowerRoot + "/Chart.js/Chart.js");
 
 
 

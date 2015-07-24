@@ -50,6 +50,10 @@ input.ng-touched.ng-invalid
     .jumbotron
         color: $secondary-color
 
+.home
+    .only-sold-here button
+        font-size: 30px !important
+
 .sidebar
     width: $sidebar-width
     height: 100%

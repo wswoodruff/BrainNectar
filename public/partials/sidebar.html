@@ -1,7 +1,7 @@
 <div ng-if="!mobileWidth">
     <h3 class="sidebarTitle">See realtime global purchases
     and what customers are accomplishing with Brain Nectar!</h3>
-
+    <h2>Units Sold: <span class="label label-default">{{numSales}}</span></h2>
     <div class="sales-feed list-group">
         <div class="sales-card list-group-item" ng-repeat="sale in salesArray">
             <div class="title">
@@ -17,6 +17,7 @@
 
 <div ng-if="mobileWidth">
     <h3 class="sidebarTitle">See the latest realtime purchase and what customers are accomplishing with Brain Nectar!</h3>
+    <h2>Units Sold: <span class="label label-default">{{numSales}}</span></h2>
     <div ng-if="mobileWidth" class="single-recent-sale">
         <div class="sales-card list-group-item">
             <div class="title">

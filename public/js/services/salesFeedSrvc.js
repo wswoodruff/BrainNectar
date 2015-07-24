@@ -197,6 +197,7 @@ simulateNewPurchase();
 */
 
 var frontEndCallback;
+var numSales = chance.integer({min: 200000, max: 999999})
 
 base.emitter.on("serverPushMessage", function(data) {
     console.log("Got server push message.");
@@ -204,8 +205,8 @@ base.emitter.on("serverPushMessage", function(data) {
 });
 
 function runFrontEndCallback(data) {
-    console.log("serverFeedData length: " + data.length);
-    frontEndCallback(data);
+    numSales += data[0].quantity;
+    frontEndCallback(data, numSales);
 }
 
 module.exports = function() {
@@ -222,6 +223,9 @@ module.exports = function() {
             simLatency(function() {
                 runFrontEndCallback(serverFeedData);
             })        
+        },
+        getNumSales: function() {
+            return numSales;
         }
     }
 }

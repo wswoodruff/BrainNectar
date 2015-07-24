@@ -15,4 +15,5 @@ module.exports = function () {
     require("lodash");
     require("ngAnimate");
     require("ui-mask");
+    require("Chart.js");
 }
