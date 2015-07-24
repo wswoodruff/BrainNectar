@@ -53,6 +53,7 @@ input.ng-touched.ng-invalid
 .home
     .only-sold-here button
         font-size: 30px !important
+        font-weight: bold
 
 .sidebar
     width: $sidebar-width
@@ -76,6 +77,21 @@ input.ng-touched.ng-invalid
     .clearfix
         height: 0px
         clear: both
+    .sales-card.ng-enter
+        animation-duration: .5s; 
+        animation-name: fadeInDown
+    .sales-card.ng-enter-stagger
+        animation-delay: 0.05s
+        animation-duration: 0s
+
+@keyframes fadeInDown
+    0%
+        opacity: 0
+        transform: translateX(20px)
+    
+    100%
+        opacity: 1;
+        transform: translateX(0);
 
 .page
     padding: 0 20px 30px 20px

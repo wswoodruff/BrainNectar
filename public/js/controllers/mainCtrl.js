@@ -27,7 +27,7 @@ module.exports = function($scope, $state, ResizeSrvc) {
             })
         }
     }
-
+    
     function onMobileWidthToggle(isMobileWidth) {
         if(!domLoaded) {
             domLoadedFunction = onMobileWidthToggle;
@@ -37,5 +37,5 @@ module.exports = function($scope, $state, ResizeSrvc) {
     }
     
     ResizeSrvc.addMobileCallback(onMobileWidthToggle);
-
+    
 }

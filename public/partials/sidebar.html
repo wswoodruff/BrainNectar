@@ -1,14 +1,14 @@
 <div ng-if="!mobileWidth">
     <h3 class="sidebarTitle">See realtime global purchases
     and what customers are accomplishing with Brain Nectar!</h3>
-    <h2>Units Sold: <span class="label label-default">{{numSales}}</span></h2>
+    <h2>Units Sold: <span class="units-sold label label-default">{{numSales}}</span></h2>
     <div class="sales-feed list-group">
         <div class="sales-card list-group-item" ng-repeat="sale in salesArray">
             <div class="title">
                 {{sale.name}}
             </div>
             from {{sale.city}}, {{sale.country}}<br>
-            bought {{sale.quantity}} cases {{sale.relativeTime}}!<br>
+            bought <strong>{{sale.quantity}} cases</strong> {{sale.relativeTime}}!<br>
             <div class="quote">&#8212; "{{sale.message}}"</div>
             <div class="clearfix"></div>
         </div>
@@ -17,14 +17,14 @@
 
 <div ng-if="mobileWidth">
     <h3 class="sidebarTitle">See the latest realtime purchase and what customers are accomplishing with Brain Nectar!</h3>
-    <h2>Units Sold: <span class="label label-default">{{numSales}}</span></h2>
-    <div ng-if="mobileWidth" class="single-recent-sale">
+    <h2>Units Sold: <span class="units-sold label label-default">{{numSales}}</span></h2>
+    <div class="single-recent-sale">
         <div class="sales-card list-group-item">
             <div class="title">
                 {{salesArray[0].name}}
             </div>
             from {{salesArray[0].city}}, {{salesArray[0].country}}<br>
-            bought {{salesArray[0].quantity}} cases {{salesArray[0].relativeTime}}!<br>
+            bought <strong>{{salesArray[0].quantity}} cases</strong> {{salesArray[0].relativeTime}}!<br>
             <div class="quote">&#8212; "{{salesArray[0].message}}"</div>
             <div class="clearfix"></div>
         </div>

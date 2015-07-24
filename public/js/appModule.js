@@ -36,6 +36,8 @@ $stateProvider
         }
     })
 
+    
+    
     .state('main.home', {
         url: '/home',
         templateUrl: 'partials/home.html',

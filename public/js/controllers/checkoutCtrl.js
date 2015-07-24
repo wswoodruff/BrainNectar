@@ -85,7 +85,11 @@ module.exports = function($scope, $timeout, ShopSrvc) {
         })
     }
 
+    $scope.checkoutWithPaypal = function() {
+        alert("open paypal in another window");
+    }
+
     $scope.submitPayment = function() {
-        // alert("payment submitted");
+        alert("Payment submitted. See you're getting smarter already!");
     }
 }
