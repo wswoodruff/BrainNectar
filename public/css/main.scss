@@ -1,4 +1,5 @@
 
+
 $navbar-height: 53px;
 $break-md-max: 768px;
 $sidebar-width: 280px;
@@ -7,6 +8,17 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "_colors.scss";
+
+
+// If you uncomment this line below you get an
+// 'Invalid top level expression' error,
+// and I can't really find much on Google about it.
+// It might be a webpack loader thing not sure. 
+// The error shows up in the JS console. Any ideas?
+
+// If not for that error I would've had my scss split up into seperate files
+
+// @import "_home.scss";
 
 
 *
@@ -27,7 +39,6 @@ html, body
 
 .nav, .pagination, .carousel, .panel-title a 
     cursor: pointer
-
 
 input.ng-touched.ng-invalid
     border-color: red
@@ -51,8 +62,8 @@ input.ng-touched.ng-invalid
         color: $secondary-color
 
 .home
-    .only-sold-here button
-        font-size: 30px !important
+    .shop-button button
+        font-size: 30px
         font-weight: bold
 
 .sidebar
@@ -78,13 +89,13 @@ input.ng-touched.ng-invalid
         height: 0px
         clear: both
     .sales-card.ng-enter
-        animation-duration: .5s; 
-        animation-name: fadeInDown
+        animation-duration: .5s;
+        animation-name: fadeInLeft
     .sales-card.ng-enter-stagger
         animation-delay: 0.05s
         animation-duration: 0s
 
-@keyframes fadeInDown
+@keyframes fadeInLeft
     0%
         opacity: 0
         transform: translateX(20px)
@@ -107,6 +118,8 @@ input.ng-touched.ng-invalid
         border-bottom: solid 1px rgb(204, 204, 204)
     .price
         font-weight: bold
+    .cart-btn
+        font-size: 30px
 
 .cart, .checkout
     .media-object
@@ -182,9 +195,12 @@ input.ng-touched.ng-invalid
         #securityCode
             width: 80px
 
-footer
+.footer
     font-size: 20px
     clear: both
+    .footer-text
+        margin-top: 50px
+
 
 @media (max-width: $break-md-max)
     .sidebar

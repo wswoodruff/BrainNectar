@@ -5,14 +5,14 @@ module.exports = function($scope, $timeout, ShopSrvc) {
     $scope.$on('$viewContentLoaded', function(event, viewConfig) {
         event.stopPropagation();
 
+        /*
+            Listen for the blur event on the billing state field to
+            update the tax immediately when the user changes the state
+        */
         $("#billingState").blur(function() {
             if(!$scope.diffShippingAddress) {
                 calculateTaxAmount($scope.billing.state);
             }
-        })
-
-        $("#shippingState").blur(function() {
-            calculateTaxAmount($scope.shipping.state);
         })
     })
 
@@ -86,7 +86,7 @@ module.exports = function($scope, $timeout, ShopSrvc) {
     }
 
     $scope.checkoutWithPaypal = function() {
-        alert("open paypal in another window");
+        alert("Open paypal in another window");
     }
 
     $scope.submitPayment = function() {

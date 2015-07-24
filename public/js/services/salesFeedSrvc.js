@@ -216,7 +216,7 @@ module.exports = function() {
             callback();
         },chance.integer({min: 500, max: 1000}))
     }
-
+    
     return {
         getDataAndBindCallbackForServerPush: function(callback) {
             frontEndCallback = callback;
